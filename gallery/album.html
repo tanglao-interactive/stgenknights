@@ -1,0 +1,64 @@
+---
+pagination:
+  data: galleryAlbums
+  size: 1
+  alias: album
+permalink: "/gallery/{{ album.slug }}/index.html"
+eleventyComputed:
+  title: "{{ album.title }} | Photo Gallery | Council 14772"
+  description: "{{ album.description }}"
+  seoImage: "{{ album.cover }}"
+  seoImageAlt: "{{ album.title }}"
+activePage: gallery
+footerBackHref: "/gallery/"
+footerBackLabel: Back to photo gallery
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% include "seo-head.html" %}
+    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900" rel="stylesheet" type="text/css">
+    <link href="/css/stylish-portfolio.css" rel="stylesheet">
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="programs-header gallery-header">
+        {% include "site-nav.html" %}
+        <div class="programs-title container">
+            <p class="eyebrow">Photo Album</p>
+            <h1>{{ album.title }}</h1>
+            <p><time datetime="{{ album.isoDate }}">{{ album.dateLabel }}</time></p>
+        </div>
+    </header>
+
+    <main id="main" class="gallery-main" tabindex="-1">
+        <article class="container gallery-album-detail">
+            <div class="gallery-album-copy">
+                <a class="announcement-back" href="/gallery/"><span aria-hidden="true">←</span> All albums</a>
+                <p>{{ album.description }}</p>
+                <a class="gallery-activity-link" href="{{ album.announcementUrl }}">View the original activity announcement <span aria-hidden="true">→</span></a>
+            </div>
+
+            <p class="gallery-album-instructions">Select a photo to view it full size. Use the left and right arrow buttons or your keyboard’s arrow keys to browse all {{ album.photos | size }} photos.</p>
+            <div class="photo-grid photo-grid-album">
+                {% for photo in album.photos %}
+                    <figure class="photo-card photo-card-album">
+                        <a class="photo-lightbox-trigger" href="{{ photo.src }}" data-photo-title="{{ album.title }}" data-photo-caption="{{ album.dateLabel }}" aria-label="View photo {{ forloop.index }} of {{ album.photos | size }}: {{ photo.alt }}">
+                            <img src="{{ photo.src }}" alt="{{ photo.alt }}"{% unless forloop.first %} loading="lazy"{% endunless %}>
+                        </a>
+                    </figure>
+                {% endfor %}
+            </div>
+        </article>
+        {% include "photo-lightbox.html" %}
+    </main>
+
+    {% include "site-footer.html" %}
+    <script src="/js/photo-gallery.js"></script>
+</body>
+</html>

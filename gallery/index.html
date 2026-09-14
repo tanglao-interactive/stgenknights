@@ -32,9 +32,24 @@ footerBackLabel: Back to photo gallery
 
     <main id="main" class="gallery-main" tabindex="-1">
         <div class="container">
+            {% for album in galleryAlbums %}
+                <section class="gallery-album" aria-labelledby="album-{{ forloop.index }}-title">
+                    <div class="gallery-intro">
+                        <p class="eyebrow"><time datetime="{{ album.isoDate }}">{{ album.date }}</time></p>
+                        <h2 id="album-{{ forloop.index }}-title">{{ album.title }}</h2>
+                        <p>{{ album.description }}</p>
+                    </div>
+                    <a class="gallery-album-card" href="/gallery/{{ album.slug }}/">
+                        <img src="{{ album.cover }}" alt="">
+                        <span><strong>Open album</strong><small>{{ album.photos | size }} photos</small></span>
+                    </a>
+                </section>
+            {% endfor %}
+
+            <section class="gallery-news" aria-labelledby="gallery-news-title">
             <div class="gallery-intro">
                 <p class="eyebrow">In the News</p>
-                <h2>Council 14772 in California Journal.</h2>
+                <h2 id="gallery-news-title">Council 14772 in California Journal.</h2>
                 <p>Select the newspaper page to view it at full size.</p>
             </div>
 
@@ -54,18 +69,10 @@ footerBackLabel: Back to photo gallery
                     </figure>
                 {% endfor %}
             </div>
+            </section>
         </div>
 
-        <dialog class="photo-lightbox" aria-labelledby="photo-lightbox-title">
-            <div class="photo-lightbox-panel">
-                <button class="photo-lightbox-close" type="button" aria-label="Close full-size photo"><i class="fa fa-times" aria-hidden="true"></i></button>
-                <img class="photo-lightbox-image" src="" alt="">
-                <div class="photo-lightbox-caption">
-                    <h2 id="photo-lightbox-title"></h2>
-                    <p></p>
-                </div>
-            </div>
-        </dialog>
+        {% include "photo-lightbox.html" %}
     </main>
 
     {% include "site-footer.html" %}
