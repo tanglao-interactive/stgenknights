@@ -1,5 +1,49 @@
 [
   {
+    "slug": "free-throw-championship-january-2027",
+    "date": "2027-01-20",
+    "dateDisplay": "January 20–21, 2027",
+    "title": "Knights of Columbus Free Throw Championship",
+    "excerpt": "Boys and girls ages 9–14 are invited to the Knights of Columbus Free Throw Championship on January 20 and 21 at the St. Genevieve High School Gymnasium.",
+    "description": "Knights of Columbus St. Genevieve Council 14772 invites boys and girls ages 9–14 to take part in the Free Throw Championship. Young athletes can demonstrate their basketball skills in a welcoming local competition organized through the council’s Faith in Action Community program. Entrants may compete in only one local competition.",
+    "image": "/img/announcements/free-throw-championship-january-2027.png",
+    "imageAlt": "Flyer for the Knights of Columbus Free Throw Championship for boys and girls ages 9 through 14 on January 20 and 21, 2027",
+    "imageCaption": "Knights of Columbus Free Throw Championship event flyer",
+    "schedule": [
+      "Wednesday and Thursday, January 20 and 21, 2027",
+      "8:00 a.m. to 10:00 a.m.",
+      "Open to boys and girls ages 9–14",
+      "Entrants may compete in only one local competition"
+    ],
+    "location": "St. Genevieve High School Gymnasium, 13967 Roscoe Blvd., Panorama City, CA 91402",
+    "contacts": [
+      "Elnor Andal — Community Director",
+      "Menardo “Bon” Mendoza — Program Director"
+    ]
+  },
+  {
+    "slug": "soccer-challenge-november-2026",
+    "date": "2026-11-17",
+    "dateDisplay": "November 17–18, 2026",
+    "title": "Knights of Columbus Soccer Challenge",
+    "excerpt": "Boys and girls ages 9–14 are invited to the Knights of Columbus Soccer Challenge on November 17 and 18 at the St. Genevieve High School Soccer Field.",
+    "description": "Knights of Columbus St. Genevieve Council 14772 invites boys and girls ages 9–14 to take part in the Soccer Challenge. Young athletes can demonstrate their soccer skills in a welcoming local competition organized through the council’s Faith in Action Community program. Entrants may compete in only one local competition.",
+    "image": "/img/announcements/soccer-challenge-november-2026.png",
+    "imageAlt": "Flyer for the Knights of Columbus Soccer Challenge for boys and girls ages 9 through 14 on November 17 and 18, 2026",
+    "imageCaption": "Knights of Columbus Soccer Challenge event flyer",
+    "schedule": [
+      "Tuesday and Wednesday, November 17 and 18, 2026",
+      "8:00 a.m. to 10:00 a.m.",
+      "Open to boys and girls ages 9–14",
+      "Entrants may compete in only one local competition"
+    ],
+    "location": "St. Genevieve High School Soccer Field, 13967 Roscoe Blvd., Panorama City, CA 91402",
+    "contacts": [
+      "Elnor Andal — Community Director",
+      "Menardo “Bon” Mendoza — Program Director"
+    ]
+  },
+  {
     "slug": "st-genevieve-blood-drive-october-2026",
     "date": "2026-10-18",
     "dateDisplay": "October 18, 2026",
