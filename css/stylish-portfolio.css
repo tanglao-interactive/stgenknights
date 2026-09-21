@@ -226,11 +226,14 @@ a {
 .nav-links .nav-submenu a {
     display: grid;
     gap: 1px;
+    min-width: 0;
     padding: 10px;
     color: var(--blue-dark);
     border-radius: 5px;
     font-size: 15px;
     line-height: 1.25;
+    overflow-wrap: anywhere;
+    white-space: normal;
 }
 
 .nav-links .nav-submenu a[hidden] {
