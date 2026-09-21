@@ -40,9 +40,30 @@ footerBackLabel: Back to photo gallery
         <article class="container gallery-album-detail">
             <div class="gallery-album-copy">
                 <a class="announcement-back" href="/gallery/"><span aria-hidden="true">←</span> All albums</a>
-                <p>{{ album.description }}</p>
-                <a class="gallery-activity-link" href="{{ album.announcementUrl }}">View the original activity announcement <span aria-hidden="true">→</span></a>
+                {% if album.article %}
+                    {% for paragraph in album.article %}<p>{{ paragraph }}</p>{% endfor %}
+                {% else %}
+                    <p>{{ album.description }}</p>
+                {% endif %}
+                {% if album.announcementUrl %}<a class="gallery-activity-link" href="{{ album.announcementUrl }}">View the original activity announcement <span aria-hidden="true">→</span></a>{% endif %}
             </div>
+
+            {% if album.videos %}
+                <section class="gallery-album-videos" aria-labelledby="album-videos-title">
+                    <h2 id="album-videos-title">Videos</h2>
+                    <div class="video-grid">
+                        {% for video in album.videos %}
+                            <figure class="video-card">
+                                <video controls preload="metadata" poster="{{ video.poster }}">
+                                    <source src="{{ video.src }}" type="video/mp4">
+                                    Your browser does not support embedded video. <a href="{{ video.src }}">Download the video</a>.
+                                </video>
+                                <figcaption>{{ video.title }}</figcaption>
+                            </figure>
+                        {% endfor %}
+                    </div>
+                </section>
+            {% endif %}
 
             <p class="gallery-album-instructions">Select a photo to view it full size. Use the left and right arrow buttons or your keyboard’s arrow keys to browse all {{ album.photos | size }} photos.</p>
             <div class="photo-grid photo-grid-album">

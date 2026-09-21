@@ -41,7 +41,7 @@ footerBackLabel: Back to photo gallery
                     </div>
                     <a class="gallery-album-card" href="/gallery/{{ album.slug }}/">
                         <img src="{{ album.cover }}" alt="">
-                        <span><strong>Open album</strong><small>{{ album.photos | size }} photos</small></span>
+                        <span><strong>Open album</strong><small>{{ album.photos | size }} photos{% if album.videos %} · {{ album.videos | size }} videos{% endif %}</small></span>
                     </a>
                 </section>
             {% endfor %}

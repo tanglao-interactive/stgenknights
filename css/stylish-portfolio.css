@@ -1286,6 +1286,7 @@ summary {
     font-size: 20px;
 }
 
+.gallery-album + .gallery-album,
 .gallery-album + .gallery-news {
     margin-top: 72px;
     padding-top: 64px;
@@ -1340,6 +1341,10 @@ summary {
     font-size: 20px;
 }
 
+.gallery-album-copy p + p {
+    margin-top: 18px;
+}
+
 .gallery-activity-link {
     color: var(--red);
     font-weight: 800;
@@ -1353,6 +1358,43 @@ summary {
 .gallery-album-instructions {
     margin-bottom: 28px;
     color: var(--muted);
+}
+
+.gallery-album-videos {
+    margin: 44px 0;
+}
+
+.gallery-album-videos h2 {
+    margin-bottom: 22px;
+    color: var(--blue-dark);
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.video-card {
+    overflow: hidden;
+    margin: 0;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: 0 14px 36px rgba(13, 39, 70, 0.08);
+}
+
+.video-card video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: var(--blue-dark);
+}
+
+.video-card figcaption {
+    padding: 16px 20px 18px;
+    color: var(--blue-dark);
+    font-weight: 800;
 }
 
 .photo-grid-album {
@@ -2535,10 +2577,12 @@ body.lightbox-open {
         padding: 58px 0 78px;
     }
 
-    .photo-grid {
+    .photo-grid,
+    .video-grid {
         grid-template-columns: 1fr;
     }
 
+    .gallery-album + .gallery-album,
     .gallery-album + .gallery-news {
         margin-top: 52px;
         padding-top: 48px;
