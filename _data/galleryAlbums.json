@@ -101,5 +101,27 @@
       { "src": "/img/gallery/2026-09-13-team-pinnacle-food-drive/15-volunteer-group-selfie.jpeg", "alt": "A large group of food drive volunteers" },
       { "src": "/img/gallery/2026-09-13-team-pinnacle-food-drive/16-volunteers-group.jpeg", "alt": "Volunteers and guests smiling together at the food drive" }
     ]
+  },
+  {
+    "slug": "bowling-day-september-2026",
+    "title": "Bowling Day: Strikes, Smiles, and Fellowship",
+    "date": "09.24.2026",
+    "isoDate": "2026-09-24",
+    "dateLabel": "September 24, 2026",
+    "description": "St. Genevieve Council 14772 brought members, families, and friends together at Back Alley Bowling for friendly competition, fellowship, trophies, and plenty of smiles.",
+    "article": [
+      "St. Genevieve Council 14772 traded meeting tables for bowling lanes on September 24, 2026, gathering members, families, and friends at Back Alley Bowling for an afternoon shaped by friendly competition and easy fellowship.",
+      "Trophies and event displays welcomed participants as teams settled in and the lanes came alive. Between frames, the gathering offered plenty of time to reconnect, share laughs, and encourage one another—proof that the day was about much more than the final score.",
+      "The celebration concluded with recognition for the day’s bowlers and a group photo that captured the spirit of the event: joyful, welcoming, and united. Bowling Day brought the council community together through recreation, camaraderie, and memorable moments."
+    ],
+    "cover": "/img/gallery/2026-09-24-bowling-day/06-bowling-day-group.JPG",
+    "photos": [
+      { "src": "/img/gallery/2026-09-24-bowling-day/01-bowling-day-welcome.jpeg", "alt": "Bowling Day event display at the lanes with a Knights of Columbus member in the background" },
+      { "src": "/img/gallery/2026-09-24-bowling-day/02-trophies-and-event-table.jpeg", "alt": "Bowling trophies and Knights of Columbus information displayed beside the lanes" },
+      { "src": "/img/gallery/2026-09-24-bowling-day/03-registration-and-prize-table.jpeg", "alt": "Bowling Day organizers gathered around the registration and trophy table" },
+      { "src": "/img/gallery/2026-09-24-bowling-day/04-fellowship-at-the-lanes.jpeg", "alt": "Four Bowling Day guests smiling together at a table" },
+      { "src": "/img/gallery/2026-09-24-bowling-day/05-trophy-recipients.JPG", "alt": "Bowling Day trophy recipients and organizers posing at the bowling center" },
+      { "src": "/img/gallery/2026-09-24-bowling-day/06-bowling-day-group.JPG", "alt": "St. Genevieve Council 14772 members, families, and friends gathered at Back Alley Bowling" }
+    ]
   }
 ]

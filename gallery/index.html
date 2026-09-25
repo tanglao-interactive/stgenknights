@@ -32,10 +32,11 @@ footerBackLabel: Back to photo gallery
 
     <main id="main" class="gallery-main" tabindex="-1">
         <div class="container">
-            {% for album in galleryAlbums %}
+            {% assign albumsByDate = galleryAlbums | sort: "isoDate" | reverse %}
+            {% for album in albumsByDate %}
                 <section class="gallery-album" aria-labelledby="album-{{ forloop.index }}-title">
                     <div class="gallery-intro">
-                        <p class="eyebrow"><time datetime="{{ album.isoDate }}">{{ album.date }}</time></p>
+                        <p class="eyebrow"><time datetime="{{ album.isoDate }}">{{ album.dateLabel }}</time></p>
                         <h2 id="album-{{ forloop.index }}-title">{{ album.title }}</h2>
                         <p>{{ album.description }}</p>
                     </div>
