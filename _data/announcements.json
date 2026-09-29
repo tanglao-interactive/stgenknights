@@ -120,6 +120,27 @@
     ]
   },
   {
+    "slug": "october-birthday-celebrants-2026",
+    "date": "2026-10-31",
+    "dateDisplay": "October 2026",
+    "title": "Happy Birthday to Our October Celebrants",
+    "excerpt": "Happy birthday to our council members celebrating their birthdays throughout October!",
+    "description": "St. Genevieve Council 14772 sends warm birthday wishes to all of our members celebrating in October. May your special day and the year ahead be filled with faith, fellowship, happiness, and many blessings.",
+    "image": "/img/announcements/october-birthday-celebrants-2026.png",
+    "imageAlt": "Happy Birthday greeting for the October celebrants of St. Genevieve Council 14772",
+    "imageCaption": "Birthday greeting for our October celebrants",
+    "celebrantsHeading": "October Celebrants",
+    "celebrants": [
+      { "name": "Ryan Amacanin", "birthday": "October 5", "dateISO": "2026-10-05" },
+      { "name": "Jonas Redulla", "birthday": "October 14", "dateISO": "2026-10-14" },
+      { "name": "Gerry Torres", "birthday": "October 19", "dateISO": "2026-10-19" },
+      { "name": "Chris Mancao", "birthday": "October 22", "dateISO": "2026-10-22" },
+      { "name": "Lou Ongkingco", "birthday": "October 22", "dateISO": "2026-10-22" },
+      { "name": "Cris Trono", "birthday": "October 25", "dateISO": "2026-10-25" },
+      { "name": "Henry Kruse", "birthday": "October 26", "dateISO": "2026-10-26" }
+    ]
+  },
+  {
     "slug": "st-genevieve-blood-drive-october-2026",
     "date": "2026-10-18",
     "dateDisplay": "October 18, 2026",
