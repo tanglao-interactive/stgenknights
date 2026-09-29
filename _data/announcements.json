@@ -106,6 +106,49 @@
     ]
   },
   {
+    "slug": "planning-meeting-agenda-october-6-2026",
+    "date": "2026-10-06",
+    "dateDisplay": "October 6, 2026",
+    "title": "Planning Meeting Agenda",
+    "excerpt": "Council members are invited to review the agenda for the October 6, 2026 planning meeting.",
+    "description": "Knights of Columbus St. Genevieve Council 14772 will hold its planning meeting on October 6, 2026. Members may review the full agenda below and download the original document.",
+    "image": "/img/knights-of-columbus-logo.png",
+    "imageAlt": "Knights of Columbus emblem",
+    "imageFit": "contain",
+    "imageCaption": "Knights of Columbus St. Genevieve Council 14772",
+    "schedule": [
+      "Tuesday, October 6, 2026"
+    ],
+    "agenda": [
+      { "item": "Call to Order", "owner": "GK Jun Guinto" },
+      { "item": "Opening Prayer", "owner": "GK Jun Guinto" },
+      { "item": "Pledge of Allegiance", "owner": "DGK Bon Mendoza" },
+      { "item": "Attendance", "owner": "Bro. Cesar Guillermo" },
+      {
+        "item": "Items for discussion and approval",
+        "owner": "GK Jun Guinto",
+        "subitems": [
+          "Membership Drive and Blood Drive on October 18, 2026, after the 9:30 a.m. Mass until 1:00 p.m. The Bloodmobile will be parked in front of Madonna Hall. A sign-up sheet will be distributed.",
+          "A second Third Degree Exemplification will be held on October 18, 2026, after the 5:00 p.m. business meeting. The council’s Third Degree Exemplification Team was created on September 28, 2026.",
+          "Another Harrah’s Casino turnaround fundraiser is scheduled for Saturday, January 16, 2027. PGK Elnor Andal will discuss the attendee list, food and snacks, and future turnarounds.",
+          "Update on “Christmas with the Knights: Honoring Our Past Grand Knights” Dinner and Dance on Sunday, December 27, 2026. DGK Bon will discuss the souvenir program layout. Solicitation letters and advertising contracts were initially emailed to the council’s nine Past Grand Knights, and outreach in the community will begin.",
+          "Christmas program assignments: program — LJ Andal; food — Bro. Mon and Sis. Euly; prizes, silent auction, and caroling — Bro. Ryan and his wife, Erma; music, sound, and DJ — DGK Bon.",
+          "Bro. Rolly Maclang and Bro. Chris Mancao will present the proceeds from the September 20, 2026 Bowling Day.",
+          "Coats for Kids on December 8, 2026: Bro. Freddie Sotto will discuss the venue and costs."
+        ]
+      },
+      { "item": "Financial Secretary’s Report and submission of bills to the trustees, including the audit report", "owner": "Bro. Joe Acol" },
+      { "item": "Trustees’ Report — Review and approval of bills", "owner": "Bro. Filemon Taleon, Bro. Freddie Sotto, and PGK Elnor C. Andal" },
+      { "item": "Fourth Degree Exemplification on November 21, 2026, at 9:30 a.m. at St. Lucy Catholic Church in Long Beach", "owner": "Bro. Pol Bulaong" },
+      { "item": "After the planning meeting, members of the Third Degree Ceremonial Team will stay for practice." },
+      { "item": "Other matters for discussion" },
+      { "item": "Closing Prayer", "owner": "Bro. Paul Bulaong" },
+      { "item": "Meeting Adjourned" }
+    ],
+    "download": "/files/announcements/Planning-Meeting-Agenda-October-6-2026.docx",
+    "downloadLabel": "Download the original agenda (Word document)"
+  },
+  {
     "slug": "september-birthday-celebrants-2026",
     "date": "2026-09-30",
     "dateDisplay": "September 2026",

@@ -48,10 +48,10 @@ footerBackLabel: Back to all announcements
                         <h3><i class="fa fa-clock-o" aria-hidden="true"></i> Schedule</h3>
                         <ul>{% for detail in announcement.schedule %}<li>{{ detail }}</li>{% endfor %}</ul>
                     </div>
-                    <div>
+                    {% if announcement.location %}<div>
                         <h3><i class="fa fa-map-marker" aria-hidden="true"></i> Location</h3>
                         <p>{{ announcement.location }}</p>
-                    </div>
+                    </div>{% endif %}
                 </section>
                 <section class="announcement-facts meeting-agenda" aria-labelledby="agenda-heading">
                     <h2 id="agenda-heading">Meeting agenda</h2>
