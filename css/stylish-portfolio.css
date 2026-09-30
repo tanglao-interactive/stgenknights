@@ -980,7 +980,7 @@ summary {
 
 .membership-contacts ul {
     display: grid;
-    gap: 12px;
+    gap: 14px;
     margin: 0;
     padding: 0;
     list-style: none;
@@ -989,16 +989,22 @@ summary {
 .membership-contacts li {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
-    column-gap: 18px;
+    column-gap: 22px;
     align-items: baseline;
+    padding: 16px 18px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 8px;
 }
 
-.membership-contacts strong,
+.membership-contacts strong {
+    color: #fff;
+    font-size: 18px;
+}
+
 .membership-contacts span {
     display: block;
-}
-
-.membership-contacts span {
+    margin-top: 3px;
     color: rgba(255, 255, 255, 0.72);
     font-size: 15px;
 }
@@ -1007,6 +1013,22 @@ summary {
     grid-column: 2;
     grid-row: 1 / span 2;
     white-space: nowrap;
+}
+
+.council-email {
+    margin-bottom: 18px;
+}
+
+@media (max-width: 560px) {
+    .membership-contacts li {
+        grid-template-columns: 1fr;
+    }
+
+    .membership-contacts a {
+        grid-column: 1;
+        grid-row: auto;
+        margin-top: 10px;
+    }
 }
 
 .contact-section iframe {
