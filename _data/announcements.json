@@ -148,18 +148,21 @@
     "dateDisplay": "October 18, 2026",
     "title": "St. Genevieve Blood Drive",
     "excerpt": "Give the gift of life at the St. Genevieve Blood Drive on Sunday, October 18, from 9:30 a.m. to 1:30 p.m. in front of Madonna Hall.",
-    "description": "Another Faith in Action Program: St. Genevieve Catholic Church invites our parish community to give the gift of life at this Vitalant Blood Drive in the Bloodmobile in front of Madonna Hall. Appointments are encouraged, and donors may ask how to Power Up their donation.",
+    "description": "Another Faith in Action Program: St. Genevieve Catholic Church invites our parish community to give the gift of life at this Vitalant Blood Drive in the Bloodmobile in front of Madonna Hall. Vitalant staff will conduct the blood draws. Appointments are encouraged, and donors may ask how to Power Up their donation.",
     "image": "/img/announcements/st-genevieve-blood-drive-october-2026.jpg",
     "imageAlt": "Flyer for the Vitalant Blood Drive in front of Madonna Hall at St. Genevieve Catholic Church on October 18, 2026",
     "imageCaption": "St. Genevieve Blood Drive event flyer",
     "schedule": [
       "Sunday, October 18, 2026",
       "9:30 a.m. to 1:30 p.m.",
+      "Vitalant staff will conduct the blood draws",
       "Donations will take place in the Bloodmobile in front of Madonna Hall",
       "Appointments are encouraged; use the Vitalant Donor App, scan the flyer’s QR code, or call Vitalant",
       "Ask how you can Power Up your donation"
     ],
     "location": "In front of Madonna Hall at St. Genevieve Catholic Church, 14061 Roscoe Blvd., Panorama City, CA 91402",
+    "actionUrl": "https://donors.vitalant.org/dwp/portal/dwp/redirect",
+    "actionLabel": "Schedule an appointment with Vitalant",
     "contacts": [
       "Vitalant appointments — (877) 258-4825 (877-25-VITAL)"
     ]

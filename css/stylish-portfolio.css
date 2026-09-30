@@ -1421,6 +1421,23 @@ summary {
     margin: 0 0 28px;
 }
 
+.announcement-action-link {
+    display: inline-block;
+    margin: 0 0 28px;
+    padding: 12px 16px;
+    color: #fff;
+    background: var(--red);
+    border-radius: 5px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.announcement-action-link:hover,
+.announcement-action-link:focus {
+    color: #fff;
+    background: #76211f;
+}
+
 .gallery-album-instructions {
     margin-bottom: 28px;
     color: var(--muted);

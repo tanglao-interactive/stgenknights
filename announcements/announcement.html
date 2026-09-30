@@ -39,6 +39,7 @@ footerBackLabel: Back to all announcements
                 <time datetime="{{ announcement.date }}">{{ announcement.dateDisplay }}</time>
                 <h1>{{ announcement.title }}</h1>
                 <p class="announcement-lead">{{ announcement.description }}</p>
+                {% if announcement.actionUrl %}<a class="announcement-action-link" href="{{ announcement.actionUrl }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> {{ announcement.actionLabel }} <i class="fa fa-external-link" aria-hidden="true"></i></a>{% endif %}
                 {% if announcement.galleryUrl %}<a class="gallery-activity-link announcement-gallery-link" href="{{ announcement.galleryUrl }}"><i class="fa fa-picture-o" aria-hidden="true"></i> {{ announcement.galleryLabel | default: "View event photos" }} <span aria-hidden="true">→</span></a>{% endif %}
 
                 {% if announcement.agenda %}
