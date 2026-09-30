@@ -211,6 +211,24 @@
     "downloadLabel": "Download the original agenda (Word document)"
   },
   {
+    "slug": "filipino-american-history-month-october-2026",
+    "date": "2026-10-01",
+    "dateDisplay": "October 1, 2026",
+    "title": "Filipino American History Month Celebration",
+    "excerpt": "Join Councilmember Imelda Padilla and community partners for a Filipino American History Month celebration on Thursday, October 1, at 9:00 a.m. at Kapwa Square.",
+    "description": "Celebrate Filipino American History Month with Los Angeles City Councilmember Imelda Padilla and community partners at Kapwa Square. Samahan ninyo kami sa pagdiriwang ng pagtatalaga ng Kapwa Square.",
+    "image": "/img/announcements/filipino-american-history-month-october-2026.jpg",
+    "imageAlt": "Flyer for the Filipino American History Month celebration and dedication of Kapwa Square on October 1, 2026, at Roscoe Boulevard and Woodman Avenue",
+    "imageCaption": "Filipino American History Month and Kapwa Square celebration flyer",
+    "schedule": [
+      "Thursday, October 1, 2026",
+      "9:00 a.m.",
+      "Celebration and dedication of Kapwa Square"
+    ],
+    "location": "Kapwa Square, Roscoe Blvd. and Woodman Ave., 13801 Roscoe Blvd., Panorama City, CA 91402",
+    "contacts": []
+  },
+  {
     "slug": "september-birthday-celebrants-2026",
     "date": "2026-09-30",
     "dateDisplay": "September 2026",
