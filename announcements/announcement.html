@@ -101,6 +101,7 @@ footerBackLabel: Back to all announcements
                         <ul>{% for contact in announcement.contacts %}<li>{{ contact }}</li>{% endfor %}</ul>
                     </div>{% endif %}
                 </section>
+                {% if announcement.attachment %}<a class="agenda-download" href="{{ announcement.attachment }}" download><i class="fa fa-file-pdf-o" aria-hidden="true"></i> {{ announcement.attachmentLabel }}</a>{% endif %}
                 {% endif %}
             </div>
 
