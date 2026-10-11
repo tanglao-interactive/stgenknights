@@ -109,10 +109,24 @@ footerBackLabel: Back to all announcements
             <figure class="announcement-poster">
                 <img{% if announcement.imageFit == "contain" %} class="announcement-image-contain"{% endif %} src="{{ announcement.image }}" alt="{{ announcement.imageAlt }}">
                 <figcaption>{{ announcement.imageCaption | default: "Official event flyer" }}</figcaption>
+                <div class="announcement-sharing" data-announcement-sharing>
+                    <h2>Save &amp; share</h2>
+                    <div class="announcement-share-actions">
+                        <a class="button primary" data-flyer-download href="{{ announcement.image }}" download><i class="fa fa-download" aria-hidden="true"></i> Download Flyer</a>
+                        <button class="button" type="button" data-share-flyer hidden><i class="fa fa-share-alt" aria-hidden="true"></i> Share Flyer</button>
+                        <button class="button" type="button" data-share-link hidden>Share Announcement</button>
+                        <button class="button" type="button" data-copy-link hidden><i class="fa fa-link" aria-hidden="true"></i> Copy Link</button>
+                    </div>
+                    <p data-share-status role="status" aria-live="polite"></p>
+                    <label data-manual-copy hidden>Copy this announcement link:
+                        <input type="url" readonly aria-label="Announcement link">
+                    </label>
+                </div>
             </figure>
         </article>
     </main>
     {% include "site-footer.html" %}
+    <script src="/js/announcement-sharing.js" defer></script>
 </body>
 
 </html>
