@@ -122,6 +122,45 @@
     ]
   },
   {
+    "image": "/img/announcements/special-olympics-volunteer-november-2026.png",
+    "imageAlt": "Special Olympics volunteer flyer for the LA County Fall Games on November 7 and Southern California Fall Games Championship on November 14–15, 2026",
+    "imageCaption": "Special Olympics November 2026 volunteer opportunities",
+    "contacts": [],
+    "slug": "special-olympics-fall-games-championship-november-2026",
+    "date": "2026-11-15",
+    "dateDisplay": "November 14–15, 2026",
+    "title": "Special Olympics Southern California Fall Games Championship",
+    "excerpt": "Volunteer at the Special Olympics Southern California Fall Games Championship on November 14–15, 2026, at Fountain Valley Sports Park.",
+    "description": "Support Special Olympics athletes at the Southern California Fall Games Championship at Fountain Valley Sports Park on November 14–15, 2026. Visit the volunteer signup page for available opportunities and shift details.",
+    "schedule": [
+      "Saturday and Sunday, November 14–15, 2026",
+      "See the volunteer signup page for shift times"
+    ],
+    "location": "Fountain Valley Sports Park",
+    "actionUrl": "https://sosclosangeles.galaxydigital.com/need/index?need_id=1308227&need_init_id=16609",
+    "actionLabel": "Volunteer for the Fall Games Championship"
+  },
+  {
+    "image": "/img/announcements/special-olympics-volunteer-november-2026.png",
+    "imageAlt": "Special Olympics volunteer flyer for the LA County Fall Games on November 7 and Southern California Fall Games Championship on November 14–15, 2026",
+    "imageCaption": "Special Olympics November 2026 volunteer opportunities",
+    "contacts": [],
+    "slug": "special-olympics-la-county-fall-games-november-2026",
+    "date": "2026-11-07",
+    "dateDisplay": "November 7, 2026",
+    "title": "Special Olympics 2026 LA County Fall Games",
+    "excerpt": "Volunteer at the LA County Fall Games on Saturday, November 7, from 9:00 a.m. to 3:00 p.m. at South Gate Park. Grillers and lunch sack preparers are needed.",
+    "description": "Help support Special Olympics athletes at the 2026 LA County Fall Games. Volunteers are needed as grillers and lunch sack preparers at South Gate Park on Saturday, November 7, 2026, from 9:00 a.m. to 3:00 p.m.",
+    "schedule": [
+      "Saturday, November 7, 2026",
+      "9:00 a.m. to 3:00 p.m.",
+      "Volunteers needed: grillers and lunch sack preparers"
+    ],
+    "location": "South Gate Park, 9520 Hildreth Ave, South Gate, CA 90280",
+    "actionUrl": "https://sosclosangeles.galaxydigital.com/need/?s=1&need_init_id=16596",
+    "actionLabel": "Volunteer for the LA County Fall Games"
+  },
+  {
     "slug": "october-birthday-celebrants-2026",
     "date": "2026-10-31",
     "dateDisplay": "October 2026",
