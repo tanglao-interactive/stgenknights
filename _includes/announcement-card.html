@@ -7,5 +7,17 @@
         <h2><a href="/announcements/{{ item.slug }}/">{{ item.title }}</a></h2>
         <p>{{ item.excerpt }}</p>
         <a class="announcement-more" href="/announcements/{{ item.slug }}/">View announcement <span aria-hidden="true">→</span></a>
+        <div class="announcement-sharing announcement-card-sharing" data-announcement-sharing data-share-title="{{ item.title | escape }}" data-share-url="/announcements/{{ item.slug }}/">
+            <div class="announcement-share-actions">
+                <a class="button primary" data-flyer-download href="{{ item.image }}" download><i class="fa fa-download" aria-hidden="true"></i> Download Flyer</a>
+                <button class="button" type="button" data-share-flyer hidden>Share Flyer</button>
+                <button class="button" type="button" data-share-link hidden>Share Announcement</button>
+                <button class="button" type="button" data-copy-link hidden>Copy Link</button>
+            </div>
+            <p data-share-status role="status" aria-live="polite"></p>
+            <label data-manual-copy hidden>Copy this announcement link:
+                <input type="url" readonly aria-label="Announcement link">
+            </label>
+        </div>
     </div>
 </article>

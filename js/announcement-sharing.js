@@ -1,14 +1,13 @@
 (() => {
-  const panel = document.querySelector('[data-announcement-sharing]');
-  if (!panel) return;
+  document.querySelectorAll('[data-announcement-sharing]').forEach((panel) => {
   const status = panel.querySelector('[data-share-status]');
   const copyButton = panel.querySelector('[data-copy-link]');
   const linkButton = panel.querySelector('[data-share-link]');
   const flyerButton = panel.querySelector('[data-share-flyer]');
   const manual = panel.querySelector('[data-manual-copy]');
   const input = manual.querySelector('input');
-  const title = document.querySelector('h1').textContent;
-  const url = new URL(window.location.pathname, window.location.origin).href;
+  const title = panel.dataset.shareTitle || document.querySelector('h1').textContent;
+  const url = new URL(panel.dataset.shareUrl || window.location.pathname, window.location.origin).href;
   const download = panel.querySelector('[data-flyer-download]');
   const flyerUrl = new URL(download.href);
   download.download = flyerUrl.pathname.split('/').pop();
@@ -41,7 +40,7 @@
   linkButton.addEventListener('click', () => share({ title, url }));
   // Prepare the actual poster ahead of time so sharing retains click activation.
   if (!navigator.canShare) return;
-  fetch(flyerUrl.href)
+  const prepareFlyer = () => fetch(flyerUrl.href)
     .then((response) => {
       if (!response.ok) throw new Error('Flyer unavailable');
       return response.blob();
@@ -54,4 +53,16 @@
       flyerButton.addEventListener('click', () => share({ title, files: [file] }));
     })
     .catch(() => { /* Download and link sharing remain available. */ });
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        observer.disconnect();
+        prepareFlyer();
+      }
+    }, { rootMargin: '200px' });
+    observer.observe(panel);
+  } else {
+    prepareFlyer();
+  }
+  });
 })();
