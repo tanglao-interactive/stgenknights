@@ -160,5 +160,64 @@
       { "src": "/img/gallery/2026-09-24-bowling-day/12-friends-at-bowling-day.jpeg", "alt": "Friends smiling together during the Bowling Day gathering" },
       { "src": "/img/gallery/2026-09-24-bowling-day/13-three-bowlers.JPG", "alt": "Three Bowling Day participants posing together in front of the lanes" }
     ]
+  },
+  {
+    "slug": "special-olympics-bowling-volunteers",
+    "title": "Special Olympics: Service, Smiles, and Fellowship",
+    "date": "08.22.2026",
+    "isoDate": "2026-08-22",
+    "dateLabel": "August 22, 2026",
+    "description": "Knights and fellow volunteers supported Special Olympics bowling with helping hands at the grill, smiles at the lanes, and time together in fellowship.",
+    "article": [
+      "Knights of Columbus members joined fellow volunteers in support of Special Olympics bowling, bringing a spirit of service and friendship to the day. Outside, the cooking team worked side by side at the grills, preparing burgers and sharing smiles as they helped with the event.",
+      "Inside the bowling center, volunteers and participants gathered at the lanes, while Special Olympics Southern California medals and ribbons stood ready to recognize the bowlers’ efforts. These moments reflect the joy of a community that encourages participation and celebrates each person’s accomplishments.",
+      "The photos also capture fellowship over a shared meal—a chance for volunteers to enjoy one another’s company. Thank you to everyone who gave their time and energy to support the athletes and help make the gathering welcoming."
+    ],
+    "cover": "/img/gallery/2026-08-22-special-olympics/04-knights-group.jpg",
+    "videos": [
+      {
+        "src": "/img/gallery/2026-08-22-special-olympics/volunteers-at-the-grill.mp4",
+        "poster": "/img/gallery/2026-08-22-special-olympics/video-poster.jpg",
+        "title": "Volunteers at the Grill"
+      }
+    ],
+    "photos": [
+      {
+        "src": "/img/gallery/2026-08-22-special-olympics/01-volunteers-at-the-grill.jpg",
+        "alt": "Knights and fellow volunteers grilling burgers outdoors"
+      },
+      {
+        "src": "/img/gallery/2026-08-22-special-olympics/02-volunteer-team.jpg",
+        "alt": "Volunteer team gathered beside the outdoor cooking area"
+      },
+      {
+        "src": "/img/gallery/2026-08-22-special-olympics/03-cooking-together.jpg",
+        "alt": "Knights in yellow vests and aprons tending the grill"
+      },
+      {
+        "src": "/img/gallery/2026-08-22-special-olympics/04-knights-group.jpg",
+        "alt": "Knights and fellow volunteers posing together outside the event"
+      },
+      {
+        "src": "/img/gallery/2026-08-22-special-olympics/05-at-the-bowling-lanes.jpg",
+        "alt": "A volunteer in a Special Olympics cap with volunteers and participants at the bowling lanes"
+      },
+      {
+        "src": "/img/gallery/2026-08-22-special-olympics/06-medals-and-ribbons.jpg",
+        "alt": "Special Olympics Southern California medals and placement ribbons prepared for the bowling awards"
+      },
+      {
+        "src": "/img/gallery/2026-08-22-special-olympics/07-grill-team-selfie.jpg",
+        "alt": "Volunteers sharing a smile while preparing burgers"
+      },
+      {
+        "src": "/img/gallery/2026-08-22-special-olympics/08-fellowship-meal.jpg",
+        "alt": "Three volunteers in purple shirts sharing a meal together"
+      },
+      {
+        "src": "/img/gallery/2026-08-22-special-olympics/09-volunteers-at-lunch.jpg",
+        "alt": "Two Special Olympics volunteers enjoying fellowship over a meal"
+      }
+    ]
   }
 ]
