@@ -2919,7 +2919,7 @@ body.lightbox-open {
 }
 .announcement-sharing h2 { margin: 0 0 16px; font-size: 24px; }
 .announcement-share-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-.announcement-share-actions .button { gap: 8px; font: inherit; font-weight: 700; cursor: pointer; color: var(--blue-dark); border: 1px solid var(--line); }
+.announcement-share-actions .button { gap: 12px; font: inherit; font-weight: 700; cursor: pointer; color: var(--blue-dark); border: 1px solid var(--line); }
 .announcement-sharing [hidden] { display: none; }
 .announcement-sharing [role="status"] { margin: 12px 0 0; font-size: 16px; }
 .announcement-sharing input { width: 100%; box-sizing: border-box; margin-top: 8px; padding: 12px; font: inherit; }
@@ -2988,7 +2988,7 @@ body.lightbox-open {
     .announcement-share-actions .button {
         font-size: 12px;
         padding: 12px 6px;
-        gap: 4px;
+        gap: 8px;
     }
     .announcement-share-actions .button > span { overflow-wrap: normal; }
 }
