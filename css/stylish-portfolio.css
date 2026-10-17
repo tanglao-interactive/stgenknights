@@ -2940,3 +2940,4 @@ body.lightbox-open {
 .calendar-options a:focus-visible, .calendar-options summary:focus-visible { outline: 3px solid var(--blue-dark); outline-offset: -3px; }
 /* Keep expanded choices inside cards, including on narrow screens. */
 .announcement-card .calendar-options { position: static; margin-top: 6px; box-sizing: border-box; }
+.calendar-options .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
