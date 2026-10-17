@@ -45,3 +45,15 @@ Pages source must be set to **GitHub Actions**.
   - git push origin master
 #### Step 5. Wait and check your deployment in this website after 5 minutes:
   - http://stgenknights.com/
+
+## Announcement calendars
+
+Event announcements can include a `calendar` array in `_data/announcements.json`.
+Each session has an ISO `start` and an optional `end`. Use explicit Pacific offsets
+(`-07:00` during daylight saving time, `-08:00` during standard time) for timed
+events. For all-day entries, use `YYYY-MM-DD`; an all-day `end` is exclusive.
+Use separate sessions for events on multiple days with specific daily times.
+Leave an unpublished end time unset. Birthday greeting posts omit this field.
+The build generates `.ics` downloads and displays Add to calendar links.
+
+After building, verify with `node --test tests/announcement-calendar.test.js`.
