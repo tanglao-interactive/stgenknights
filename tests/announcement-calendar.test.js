@@ -96,7 +96,7 @@ test('announcement actions are labelled icon-only controls without dropdowns', (
     for (const [, , attributes, content] of controls) {
       assert.match(attributes, /title="[^"]+"/);
       assert.match(attributes, /aria-label="[^"]+"/);
-      assert.match(content, /^<i class="fa fa-[\w-]+" aria-hidden="true"><\/i>$/);
+      assert.match(content, /^(?:<i class="fa fa-[\w-]+" aria-hidden="true"><\/i>|<img class="calendar-provider-icon" src="\/img\/icons\/(?:google-calendar\.png|outlook-calendar\.svg)" width="24" height="24" alt="" aria-hidden="true">)$/);
     }
     if (item.calendar?.length > 1) {
       assert.match(actions, /title="Google Calendar \([^)]+\)"/);
@@ -104,5 +104,10 @@ test('announcement actions are labelled icon-only controls without dropdowns', (
     }
   }
   assert.ok(!listing.includes('data-calendar-dropdown'));
-  assert.ok(listing.includes('fa-google'));
+  assert.ok(listing.includes('/img/icons/google-calendar.png'));
+  assert.ok(listing.includes('/img/icons/outlook-calendar.svg'));
+  assert.ok(!listing.includes('fa-google'));
+  assert.ok(!listing.includes('fa-windows'));
+  assert.ok(existsSync('_site/img/icons/google-calendar.png'));
+  assert.ok(existsSync('_site/img/icons/outlook-calendar.svg'));
 });

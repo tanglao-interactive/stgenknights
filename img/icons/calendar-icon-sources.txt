@@ -1,0 +1,8 @@
+Google Calendar product icon
+Source: https://www.gstatic.com/images/branding/product/2x/calendar_2020q4_48dp.png
+Trademark: Google LLC. Used to identify the Google Calendar action.
+
+Outlook Calendar icon
+Source: https://thesvg.org/icon/outlook-calendar
+Asset: https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/outlook-calendar/default.svg
+Trademark: Microsoft Corporation. Used to identify the Outlook Calendar action.

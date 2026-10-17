@@ -2948,3 +2948,11 @@ body.lightbox-open {
     content: "+"; position: absolute; right: -4px; bottom: -3px;
     background: #fff; border-radius: 50%; font: bold 13px/13px Arial, sans-serif;
 }
+.announcement-share-actions .calendar-provider-icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    padding: 0;
+    border-radius: 0;
+}
