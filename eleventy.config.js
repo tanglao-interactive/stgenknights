@@ -1,7 +1,9 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
-import { createCalendar } from "./lib/announcement-calendar.js";
+import { createCalendar, googleCalendarLinks } from "./lib/announcement-calendar.js";
 
 export default function (eleventyConfig) {
+  eleventyConfig.addFilter("googleCalendarLinks", googleCalendarLinks);
+
   for (const path of [
     "CNAME",
     "css",

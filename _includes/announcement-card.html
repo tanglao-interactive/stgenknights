@@ -10,6 +10,8 @@
         <div class="announcement-sharing announcement-card-sharing" data-announcement-sharing data-share-title="{{ item.title | escape }}" data-share-url="/announcements/{{ item.slug }}/">
             <div class="announcement-share-actions">
                 <a class="button primary" data-flyer-download href="{{ item.image }}" download><i class="fa fa-download" aria-hidden="true"></i> Download Flyer</a>
+                {% assign googleLinks = item | googleCalendarLinks: site.url %}
+                {% for calendarLink in googleLinks %}<a class="button" href="{{ calendarLink.url | escape }}" target="_blank" rel="noopener noreferrer" aria-label="Add {{ item.title | escape }} to {{ calendarLink.label | escape }} (opens in a new tab)"><i class="fa fa-calendar" aria-hidden="true"></i> {{ calendarLink.label }}</a>{% endfor %}
                 {% if item.calendar %}<a class="button" href="/calendars/{{ item.slug }}.ics" download aria-label="Add {{ item.title | escape }} to calendar"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i> Add to calendar</a>{% endif %}
                 <button class="button" type="button" data-share-flyer hidden>Share Flyer</button>
                 <button class="button" type="button" data-share-link hidden>Share Announcement</button>

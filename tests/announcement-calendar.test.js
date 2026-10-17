@@ -38,3 +38,27 @@ test('every event calendar is built and linked from its announcement; birthday g
     } else assert.ok(!page.includes('Add to calendar'));
   }
 });
+
+test('Google links preserve Pacific times, details, locations and separate daily sessions', async () => {
+  const { googleCalendarLinks } = await import('../lib/announcement-calendar.js');
+  const find = slug => announcements.find(a => a.slug === slug);
+  const christmas = find('christmas-with-the-knights-2026');
+  const [link] = googleCalendarLinks(christmas, 'https://stgenknights.com');
+  const url = new URL(link.url);
+  assert.equal(url.origin, 'https://calendar.google.com');
+  assert.equal(url.searchParams.get('dates'), '20261228T000000Z/20261228T000000Z');
+  assert.equal(url.searchParams.get('ctz'), 'America/Los_Angeles');
+  assert.equal(url.searchParams.get('text'), christmas.title);
+  assert.equal(url.searchParams.get('location'), christmas.location);
+  assert.ok(url.searchParams.get('details').includes('/announcements/christmas-with-the-knights-2026/'));
+  const competition = googleCalendarLinks(find('free-throw-championship-january-2027'), 'https://stgenknights.com');
+  assert.equal(competition.length, 2);
+  assert.equal(competition[1].label, 'Google Calendar (Jan 21)');
+  assert.equal(new URL(competition[1].url).searchParams.get('dates'), '20270121T160000Z/20270121T180000Z');
+  const day = googleCalendarLinks(find('planning-meeting-agenda-october-6-2026'), 'https://stgenknights.com')[0];
+  assert.equal(new URL(day.url).searchParams.get('dates'), '20261006/20261007');
+  for (const item of announcements) {
+    const page = readFileSync(`_site/announcements/${item.slug}/index.html`, 'utf8');
+    assert.equal(page.includes('calendar.google.com/calendar/render?'), Boolean(item.calendar));
+  }
+});
