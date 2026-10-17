@@ -2976,3 +2976,19 @@ body.lightbox-open {
     padding: 0;
     border-radius: 0;
 }
+@media (min-width: 768px) {
+    .announcement-sharing { padding: 12px 8px; }
+    .announcement-share-actions .button {
+        font-size: 12px;
+        padding: 12px 6px;
+        gap: 4px;
+    }
+    .announcement-share-actions .button > span { overflow-wrap: normal; }
+    .announcement-share-actions .button > .fa,
+    .announcement-share-actions .calendar-provider-icon {
+        width: 20px;
+        height: 20px;
+        flex-basis: 20px;
+        font-size: 20px;
+    }
+}
