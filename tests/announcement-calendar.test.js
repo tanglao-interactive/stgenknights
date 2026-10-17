@@ -83,12 +83,26 @@ test('Outlook links preserve UTC instants, all-day ranges, and event details', a
   assert.equal(allDay.searchParams.get('startdt'), '2026-11-14');
   assert.equal(allDay.searchParams.get('enddt'), '2026-11-16');
 });
-test('each event has one calendar dropdown containing all three providers', () => {
-  for (const event of announcements.filter(item => item.calendar)) {
-    const page = readFileSync(`_site/announcements/${event.slug}/index.html`, 'utf8');
-    assert.equal((page.match(/data-calendar-dropdown/g) || []).length, 1);
-    assert.equal((page.match(/> Add to Calendar /g) || []).length, 1);
-    assert.ok(page.includes('outlook.live.com/calendar/0/deeplink/compose?'));
-    assert.ok(page.includes('Apple / Other Calendar (.ics)'));
+
+test('announcement actions are labelled icon-only controls without dropdowns', () => {
+  const listing = readFileSync('_site/announcements/index.html', 'utf8');
+  for (const item of announcements) {
+    const page = readFileSync(`_site/announcements/${item.slug}/index.html`, 'utf8');
+    assert.ok(!page.includes('data-calendar-dropdown'));
+    assert.ok(!page.includes('/js/announcement-calendar.js'));
+    const actions = page.split('class="announcement-share-actions"')[1].split('</div>')[0];
+    const controls = [...actions.matchAll(/<(a|button)\b([^>]*)>(.*?)<\/\1>/gs)];
+    assert.equal(controls.length, item.calendar ? 5 + 2 * item.calendar.length : 4);
+    for (const [, , attributes, content] of controls) {
+      assert.match(attributes, /title="[^"]+"/);
+      assert.match(attributes, /aria-label="[^"]+"/);
+      assert.match(content, /^<i class="fa fa-[\w-]+" aria-hidden="true"><\/i>$/);
+    }
+    if (item.calendar?.length > 1) {
+      assert.match(actions, /title="Google Calendar \([^)]+\)"/);
+      assert.match(actions, /title="Outlook Calendar \([^)]+\)"/);
+    }
   }
+  assert.ok(!listing.includes('data-calendar-dropdown'));
+  assert.ok(listing.includes('fa-google'));
 });
