@@ -1481,7 +1481,7 @@ summary {
 }
 
 .photo-grid-album {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .photo-card-album img {
@@ -2564,7 +2564,7 @@ body.lightbox-open {
     }
 
     .knightline-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .officers-list {
@@ -2931,12 +2931,18 @@ body.lightbox-open {
 /* Equal columns keep calendar and sharing actions aligned. */
 .announcement-share-actions {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-auto-rows: 1fr;
     gap: 12px;
 }
 .announcement-share-actions .button {
     display: flex;
+    background: #f4f7fa;
+    color: var(--blue-dark);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    box-shadow: none;
+    appearance: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -2949,6 +2955,12 @@ body.lightbox-open {
     line-height: 1.3;
     text-align: center;
     white-space: normal;
+}
+.announcement-share-actions .button:hover,
+.announcement-share-actions .button:focus-visible {
+    background: #e7eef5;
+    border-color: var(--blue-dark);
+    box-shadow: none;
 }
 .announcement-share-actions .button > .fa { font-size: 22px; }
 .announcement-share-actions .button > span { overflow-wrap: anywhere; }
