@@ -1,0 +1,17 @@
+{% if calendarEvent.calendar %}
+{% assign googleLinks = calendarEvent | googleCalendarLinks: site.url %}
+{% assign outlookLinks = calendarEvent | outlookCalendarLinks: site.url %}
+<details class="calendar-dropdown" data-calendar-dropdown>
+    <summary class="button" aria-label="Add {{ calendarEvent.title | escape }} to calendar"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i> Add to Calendar <i class="fa fa-chevron-down" aria-hidden="true"></i></summary>
+    <div class="calendar-options">
+        {% if googleLinks.size == 1 %}
+        <a href="{{ googleLinks[0].url | escape }}" target="_blank" rel="noopener noreferrer">Google Calendar <span class="sr-only">(opens in a new tab)</span></a>
+        <a href="{{ outlookLinks[0].url | escape }}" target="_blank" rel="noopener noreferrer">Outlook Calendar <span class="sr-only">(opens in a new tab)</span></a>
+        {% else %}
+        <details><summary>Google Calendar</summary>{% for link in googleLinks %}<a href="{{ link.url | escape }}" target="_blank" rel="noopener noreferrer">{{ link.label }} <span class="sr-only">(opens in a new tab)</span></a>{% endfor %}</details>
+        <details><summary>Outlook Calendar</summary>{% for link in outlookLinks %}<a href="{{ link.url | escape }}" target="_blank" rel="noopener noreferrer">{{ link.label }} <span class="sr-only">(opens in a new tab)</span></a>{% endfor %}</details>
+        {% endif %}
+        <a href="/calendars/{{ calendarEvent.slug }}.ics" download>Apple / Other Calendar (.ics)</a>
+    </div>
+</details>
+{% endif %}

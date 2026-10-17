@@ -62,3 +62,33 @@ test('Google links preserve Pacific times, details, locations and separate daily
     assert.equal(page.includes('calendar.google.com/calendar/render?'), Boolean(item.calendar));
   }
 });
+
+test('Outlook links preserve UTC instants, all-day ranges, and event details', async () => {
+  const { outlookCalendarLinks } = await import('../lib/announcement-calendar.js');
+  const find = slug => announcements.find(a => a.slug === slug);
+  const event = find('christmas-with-the-knights-2026');
+  const url = new URL(outlookCalendarLinks(event, 'https://stgenknights.com')[0].url);
+  assert.equal(url.origin, 'https://outlook.live.com');
+  assert.equal(url.searchParams.get('startdt'), '2026-12-28T00:00:00.000Z');
+  assert.equal(url.searchParams.get('enddt'), url.searchParams.get('startdt'));
+  assert.equal(url.searchParams.get('allday'), 'false');
+  assert.equal(url.searchParams.get('subject'), event.title);
+  assert.equal(url.searchParams.get('location'), event.location);
+  assert.ok(url.searchParams.get('body').includes(event.description));
+  const multi = outlookCalendarLinks(find('free-throw-championship-january-2027'), 'https://stgenknights.com');
+  assert.equal(multi.length, 2);
+  assert.equal(multi[1].label, 'Outlook Calendar (Jan 21)');
+  const allDay = new URL(outlookCalendarLinks(find('special-olympics-fall-games-championship-november-2026'), 'https://stgenknights.com')[0].url);
+  assert.equal(allDay.searchParams.get('allday'), 'true');
+  assert.equal(allDay.searchParams.get('startdt'), '2026-11-14');
+  assert.equal(allDay.searchParams.get('enddt'), '2026-11-16');
+});
+test('each event has one calendar dropdown containing all three providers', () => {
+  for (const event of announcements.filter(item => item.calendar)) {
+    const page = readFileSync(`_site/announcements/${event.slug}/index.html`, 'utf8');
+    assert.equal((page.match(/data-calendar-dropdown/g) || []).length, 1);
+    assert.equal((page.match(/> Add to Calendar /g) || []).length, 1);
+    assert.ok(page.includes('outlook.live.com/calendar/0/deeplink/compose?'));
+    assert.ok(page.includes('Apple / Other Calendar (.ics)'));
+  }
+});

@@ -2927,3 +2927,16 @@ body.lightbox-open {
 
 .announcement-card-sharing { margin-top: 20px; padding: 16px; }
 .announcement-card-sharing .button { min-height: 44px; padding: 10px 12px; font-size: 16px; }
+
+.calendar-dropdown { position: relative; align-self: flex-start; }
+.calendar-dropdown > summary { list-style: none; display: flex; align-items: center; }
+.calendar-dropdown > summary::-webkit-details-marker { display: none; }
+.calendar-dropdown[open] > summary .fa-chevron-down { transform: rotate(180deg); }
+.calendar-options { position: absolute; z-index: 20; top: calc(100% + 6px); left: 0; width: 270px; max-width: calc(100vw - 80px); padding: 6px; background: #fff; border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 8px 24px #0002; }
+.calendar-options a, .calendar-options summary { display: block; padding: 12px; color: var(--blue-dark); font-weight: 600; text-decoration: none; border-radius: 4px; cursor: pointer; }
+.calendar-options details > summary { display: list-item; margin-left: 16px; }
+.calendar-options details a { padding-left: 24px; }
+.calendar-options a:hover, .calendar-options summary:hover { background: #edf2f7; }
+.calendar-options a:focus-visible, .calendar-options summary:focus-visible { outline: 3px solid var(--blue-dark); outline-offset: -3px; }
+/* Keep expanded choices inside cards, including on narrow screens. */
+.announcement-card .calendar-options { position: static; margin-top: 6px; box-sizing: border-box; }

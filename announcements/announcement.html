@@ -113,9 +113,7 @@ footerBackLabel: Back to all announcements
                     <h2>Save &amp; share</h2>
                     <div class="announcement-share-actions">
                         <a class="button primary" data-flyer-download href="{{ announcement.image }}" download><i class="fa fa-download" aria-hidden="true"></i> Download Flyer</a>
-                {% assign googleLinks = announcement | googleCalendarLinks: site.url %}
-                {% for calendarLink in googleLinks %}<a class="button" href="{{ calendarLink.url | escape }}" target="_blank" rel="noopener noreferrer" aria-label="Add {{ announcement.title | escape }} to {{ calendarLink.label | escape }} (opens in a new tab)"><i class="fa fa-calendar" aria-hidden="true"></i> {{ calendarLink.label }}</a>{% endfor %}
-                {% if announcement.calendar %}<a class="button" href="/calendars/{{ announcement.slug }}.ics" download aria-label="Add {{ announcement.title | escape }} to calendar"><i class="fa fa-calendar-plus-o" aria-hidden="true"></i> Add to calendar</a>{% endif %}
+                {% assign calendarEvent = announcement %}{% include "announcement-calendar.html" %}
                         <button class="button" type="button" data-share-flyer hidden><i class="fa fa-share-alt" aria-hidden="true"></i> Share Flyer</button>
                         <button class="button" type="button" data-share-link hidden>Share Announcement</button>
                         <button class="button" type="button" data-copy-link hidden><i class="fa fa-link" aria-hidden="true"></i> Copy Link</button>
