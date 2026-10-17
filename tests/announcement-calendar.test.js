@@ -84,7 +84,7 @@ test('Outlook links preserve UTC instants, all-day ranges, and event details', a
   assert.equal(allDay.searchParams.get('enddt'), '2026-11-16');
 });
 
-test('announcement actions are labelled icon-only controls without dropdowns', () => {
+test('announcement actions are labelled icon-and-text controls without dropdowns', () => {
   const listing = readFileSync('_site/announcements/index.html', 'utf8');
   for (const item of announcements) {
     const page = readFileSync(`_site/announcements/${item.slug}/index.html`, 'utf8');
@@ -96,7 +96,8 @@ test('announcement actions are labelled icon-only controls without dropdowns', (
     for (const [, , attributes, content] of controls) {
       assert.match(attributes, /title="[^"]+"/);
       assert.match(attributes, /aria-label="[^"]+"/);
-      assert.match(content, /^(?:<i class="fa fa-[\w-]+" aria-hidden="true"><\/i>|<img class="calendar-provider-icon" src="\/img\/icons\/(?:google-calendar\.png|outlook-calendar\.svg)" width="24" height="24" alt="" aria-hidden="true">)$/);
+      assert.match(content, /aria-hidden="true"/);
+      assert.match(content, /<span>[^<]+<\/span>$/);
     }
     if (item.calendar?.length > 1) {
       assert.match(actions, /title="Google Calendar \([^)]+\)"/);
@@ -108,6 +109,8 @@ test('announcement actions are labelled icon-only controls without dropdowns', (
   assert.ok(listing.includes('/img/icons/outlook-calendar.svg'));
   assert.ok(!listing.includes('fa-google'));
   assert.ok(!listing.includes('fa-windows'));
+  assert.ok(existsSync('_site/img/icons/apple-calendar.png'));
+  assert.ok(listing.includes('/img/icons/apple-calendar.png'));
   assert.ok(existsSync('_site/img/icons/google-calendar.png'));
   assert.ok(existsSync('_site/img/icons/outlook-calendar.svg'));
 });

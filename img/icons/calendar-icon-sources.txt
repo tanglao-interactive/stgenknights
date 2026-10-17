@@ -6,3 +6,8 @@ Outlook Calendar icon
 Source: https://thesvg.org/icon/outlook-calendar
 Asset: https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/outlook-calendar/default.svg
 Trademark: Microsoft Corporation. Used to identify the Outlook Calendar action.
+
+Apple Calendar app icon
+Source: https://support.apple.com/guide/calendar/welcome/mac
+Asset: https://ipcdn-web.apple.com/assets/v2/web/4dbc02d7-ac3b-4563-a91c-0dcea817af54
+Trademark: Apple Inc. Used to identify the Apple Calendar action.

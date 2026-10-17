@@ -9,11 +9,11 @@
         <a class="announcement-more" href="/announcements/{{ item.slug }}/">View announcement <span aria-hidden="true">→</span></a>
         <div class="announcement-sharing announcement-card-sharing" data-announcement-sharing data-share-title="{{ item.title | escape }}" data-share-url="/announcements/{{ item.slug }}/">
             <div class="announcement-share-actions">
-                <a class="button primary" data-flyer-download href="{{ item.image }}" download title="Download Flyer" aria-label="Download Flyer"><i class="fa fa-download" aria-hidden="true"></i></a>
                 {% assign calendarEvent = item %}{% include "announcement-calendar.html" %}
-                <button class="button" type="button" data-share-flyer hidden title="Share Flyer" aria-label="Share Flyer"><i class="fa fa-picture-o" aria-hidden="true"></i></button>
-                <button class="button" type="button" data-share-link hidden title="Share Announcement" aria-label="Share Announcement"><i class="fa fa-share-alt" aria-hidden="true"></i></button>
-                <button class="button" type="button" data-copy-link hidden title="Copy Link" aria-label="Copy Link"><i class="fa fa-link" aria-hidden="true"></i></button>
+                <a class="button primary" data-flyer-download href="{{ item.image }}" download title="Download Flyer" aria-label="Download Flyer"><i class="fa fa-download" aria-hidden="true"></i><span>Download Flyer</span></a>
+                <button class="button" type="button" data-share-flyer hidden title="Share Flyer" aria-label="Share Flyer"><i class="fa fa-picture-o" aria-hidden="true"></i><span>Share Flyer</span></button>
+                <button class="button" type="button" data-share-link hidden title="Share Announcement" aria-label="Share Announcement"><i class="fa fa-share-alt" aria-hidden="true"></i><span>Share Announcement</span></button>
+                <button class="button" type="button" data-copy-link hidden title="Copy Link" aria-label="Copy Link"><i class="fa fa-link" aria-hidden="true"></i><span>Copy Link</span></button>
             </div>
             <p data-share-status role="status" aria-live="polite"></p>
             <label data-manual-copy hidden>Copy this announcement link:

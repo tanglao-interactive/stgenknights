@@ -40,7 +40,7 @@ footerBackLabel: Back to all announcements
                 <h1>{{ announcement.title }}</h1>
                 <p class="announcement-lead">{{ announcement.description }}</p>
                 {% if announcement.actionUrl %}<a class="announcement-action-link" href="{{ announcement.actionUrl }}" target="_blank" rel="noopener noreferrer"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> {{ announcement.actionLabel }} <i class="fa fa-external-link" aria-hidden="true"></i></a>{% endif %}
-                {% if announcement.galleryUrl %}<a class="gallery-activity-link announcement-gallery-link" href="{{ announcement.galleryUrl }}"><i class="fa fa-picture-o" aria-hidden="true"></i> {{ announcement.galleryLabel | default: "View event photos" }} <span aria-hidden="true">→</span></a>{% endif %}
+                {% if announcement.galleryUrl %}<a class="gallery-activity-link announcement-gallery-link" href="{{ announcement.galleryUrl }}"><i class="fa fa-picture-o" aria-hidden="true"></i><span>Share Flyer</span> {{ announcement.galleryLabel | default: "View event photos" }} <span aria-hidden="true">→</span></a>{% endif %}
 
                 {% if announcement.agenda %}
                 <section class="announcement-facts" aria-labelledby="meeting-details-heading">
@@ -112,11 +112,11 @@ footerBackLabel: Back to all announcements
                 <div class="announcement-sharing" data-announcement-sharing>
                     <h2>Save &amp; share</h2>
                     <div class="announcement-share-actions">
-                        <a class="button primary" data-flyer-download href="{{ announcement.image }}" download title="Download Flyer" aria-label="Download Flyer"><i class="fa fa-download" aria-hidden="true"></i></a>
-                {% assign calendarEvent = announcement %}{% include "announcement-calendar.html" %}
-                        <button class="button" type="button" data-share-flyer hidden title="Share Flyer" aria-label="Share Flyer"><i class="fa fa-picture-o" aria-hidden="true"></i></button>
-                        <button class="button" type="button" data-share-link hidden title="Share Announcement" aria-label="Share Announcement"><i class="fa fa-share-alt" aria-hidden="true"></i></button>
-                        <button class="button" type="button" data-copy-link hidden title="Copy Link" aria-label="Copy Link"><i class="fa fa-link" aria-hidden="true"></i></button>
+                        {% assign calendarEvent = announcement %}{% include "announcement-calendar.html" %}
+                <a class="button primary" data-flyer-download href="{{ announcement.image }}" download title="Download Flyer" aria-label="Download Flyer"><i class="fa fa-download" aria-hidden="true"></i><span>Download Flyer</span></a>
+                        <button class="button" type="button" data-share-flyer hidden title="Share Flyer" aria-label="Share Flyer"><i class="fa fa-picture-o" aria-hidden="true"></i><span>Share Flyer</span></button>
+                        <button class="button" type="button" data-share-link hidden title="Share Announcement" aria-label="Share Announcement"><i class="fa fa-share-alt" aria-hidden="true"></i><span>Share Announcement</span></button>
+                        <button class="button" type="button" data-copy-link hidden title="Copy Link" aria-label="Copy Link"><i class="fa fa-link" aria-hidden="true"></i><span>Copy Link</span></button>
                     </div>
                     <p data-share-status role="status" aria-live="polite"></p>
                     <label data-manual-copy hidden>Copy this announcement link:
