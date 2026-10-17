@@ -2962,16 +2962,23 @@ body.lightbox-open {
     border-color: var(--blue-dark);
     box-shadow: none;
 }
-.announcement-share-actions .button > .fa { width: 24px; flex: 0 0 24px; font-size: 22px; text-align: center; }
+.announcement-share-actions .button > .fa,
+.announcement-share-actions .calendar-provider-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+    font-size: 20px;
+    line-height: 1;
+    text-align: center;
+}
 .announcement-share-actions .button > span { overflow-wrap: anywhere; }
 @media (max-width: 767px) {
     .announcement-share-actions { grid-template-columns: minmax(0, 1fr); }
 }
 .announcement-share-actions .calendar-provider-icon {
-    display: block;
-    flex: 0 0 24px;
-    width: 24px;
-    height: 24px;
     object-fit: contain;
     padding: 0;
     border-radius: 0;
@@ -2984,11 +2991,4 @@ body.lightbox-open {
         gap: 4px;
     }
     .announcement-share-actions .button > span { overflow-wrap: normal; }
-    .announcement-share-actions .button > .fa,
-    .announcement-share-actions .calendar-provider-icon {
-        width: 20px;
-        height: 20px;
-        flex-basis: 20px;
-        font-size: 20px;
-    }
 }
