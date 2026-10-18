@@ -1787,7 +1787,7 @@ body.lightbox-open {
 .announcement-card-image {
     display: block;
     overflow: hidden;
-    background: var(--cream);
+    background: #fff;
 }
 
 .announcement-card-image img {
