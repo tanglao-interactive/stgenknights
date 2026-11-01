@@ -70,6 +70,18 @@ footerBackLabel: Back to all announcements
                     </ol>
                     {% if announcement.download %}<a class="agenda-download" href="{{ announcement.download }}" download><i class="fa fa-file-word-o" aria-hidden="true"></i> {{ announcement.downloadLabel }}</a>{% endif %}
                 </section>
+                {% elsif announcement.celebrantGroups %}
+                <section class="announcement-facts birthday-celebrants" aria-labelledby="celebrants-heading">
+                    <h2 id="celebrants-heading">{{ announcement.celebrantsHeading }}</h2>
+                    {% for group in announcement.celebrantGroups %}
+                    <h3>{{ group.heading }}</h3>
+                    <ul>
+                        {% for celebrant in group.celebrants %}
+                        <li><strong>{{ celebrant.name }}</strong><time datetime="{{ celebrant.dateISO }}">{{ celebrant.birthday }}</time></li>
+                        {% endfor %}
+                    </ul>
+                    {% endfor %}
+                </section>
                 {% elsif announcement.celebrants %}
                 <section class="announcement-facts birthday-celebrants" aria-labelledby="celebrants-heading">
                     <h2 id="celebrants-heading">{{ announcement.celebrantsHeading | default: "August Celebrants" }}</h2>

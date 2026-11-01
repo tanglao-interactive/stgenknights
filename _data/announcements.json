@@ -1,5 +1,74 @@
 [
   {
+    "slug": "november-birthday-celebrants-2026",
+    "date": "2026-11-01",
+    "dateDisplay": "November 2026",
+    "title": "Happy Birthday to Our November Celebrants",
+    "excerpt": "Birthday blessings to our Knights and their wives celebrating throughout November!",
+    "description": "St. Genevieve Council 14772 sends warm birthday wishes to our brother Knights and the wives of our members celebrating in November. May God bless you with good health, joy, and a year filled with faith, love, and fellowship.",
+    "image": "/img/announcements/november-birthday-celebrants-2026.svg",
+    "imageAlt": "November birthday greeting listing seven Knights and two wives of Knights in separate sections with their birthday dates",
+    "imageCaption": "November 2026 birthday celebrants — Knights and wives of Knights",
+    "celebrantsHeading": "November Celebrants",
+    "celebrantGroups": [
+      {
+        "heading": "Knights of Columbus Members",
+        "celebrants": [
+          {
+            "name": "Patrick Ayala-Garcia",
+            "birthday": "November 8",
+            "dateISO": "2026-11-08"
+          },
+          {
+            "name": "Carlito Dayo",
+            "birthday": "November 11",
+            "dateISO": "2026-11-11"
+          },
+          {
+            "name": "Justino Zuluaga",
+            "birthday": "November 18",
+            "dateISO": "2026-11-18"
+          },
+          {
+            "name": "Peter Mutia",
+            "birthday": "November 18",
+            "dateISO": "2026-11-18"
+          },
+          {
+            "name": "Diosdado Macalino",
+            "birthday": "November 19",
+            "dateISO": "2026-11-19"
+          },
+          {
+            "name": "Rolando Cortel",
+            "birthday": "November 27",
+            "dateISO": "2026-11-27"
+          },
+          {
+            "name": "Primo Sumagaysay",
+            "birthday": "November 27",
+            "dateISO": "2026-11-27"
+          }
+        ]
+      },
+      {
+        "heading": "Wives of Knights of Columbus Members",
+        "celebrants": [
+          {
+            "name": "Liezl Redulla",
+            "birthday": "November 4",
+            "dateISO": "2026-11-04"
+          },
+          {
+            "name": "Ermabelle Amacanin",
+            "birthday": "November 19",
+            "dateISO": "2026-11-19"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "slug": "virtus-training-november-2026",
     "calendar": [
       {
