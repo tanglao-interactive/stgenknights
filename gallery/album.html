@@ -69,9 +69,10 @@ footerBackLabel: Back to photo gallery
             <div class="photo-grid photo-grid-album">
                 {% for photo in album.photos %}
                     <figure class="photo-card photo-card-album">
-                        <a class="photo-lightbox-trigger" href="{{ photo.src }}" data-photo-title="{{ album.title }}" data-photo-caption="{{ album.dateLabel }}" aria-label="View photo {{ forloop.index }} of {{ album.photos | size }}: {{ photo.alt }}">
+                        <a class="photo-lightbox-trigger" href="{{ photo.src }}" data-photo-title="{{ album.title }}" data-photo-caption="{% if photo.caption %}{{ photo.caption }} — {% endif %}{{ album.dateLabel }}" aria-label="View photo {{ forloop.index }} of {{ album.photos | size }}: {{ photo.alt }}">
                             <img src="{{ photo.src }}" alt="{{ photo.alt }}"{% unless forloop.first %} loading="lazy"{% endunless %}>
                         </a>
+                        {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
                     </figure>
                 {% endfor %}
             </div>
