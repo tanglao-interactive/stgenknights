@@ -5,9 +5,9 @@ import { createCalendar, escapeText, foldLine } from '../lib/announcement-calend
 const announcements = JSON.parse(readFileSync('_data/announcements.json'));
 const calendar = slug => createCalendar(announcements.find(a => a.slug === slug), 'https://stgenknights.com');
 test('Pacific winter and summer times export as the correct UTC instants', () => {
-  assert.match(calendar('christmas-with-the-knights-2026'), /DTSTART:20261228T000000Z/);
+  assert.match(calendar('christmas-with-the-knights-2026'), /DTSTART:20261226T220000Z/);
   assert.match(calendar('living-rosary-october-2026'), /DTSTART:20261031T220000Z/);
-  assert.doesNotMatch(calendar('christmas-with-the-knights-2026'), /DTEND/);
+  assert.match(calendar('christmas-with-the-knights-2026'), /DTEND:20261227T040000Z/);
 });
 test('two-day competitions export separate timed events and unknown shifts span the correct dates', () => {
   const competition = calendar('free-throw-championship-january-2027');
@@ -46,7 +46,7 @@ test('Google links preserve Pacific times, details, locations and separate daily
   const [link] = googleCalendarLinks(christmas, 'https://stgenknights.com');
   const url = new URL(link.url);
   assert.equal(url.origin, 'https://calendar.google.com');
-  assert.equal(url.searchParams.get('dates'), '20261228T000000Z/20261228T000000Z');
+  assert.equal(url.searchParams.get('dates'), '20261226T220000Z/20261227T040000Z');
   assert.equal(url.searchParams.get('ctz'), 'America/Los_Angeles');
   assert.equal(url.searchParams.get('text'), christmas.title);
   assert.equal(url.searchParams.get('location'), christmas.location);
@@ -69,8 +69,8 @@ test('Outlook links preserve UTC instants, all-day ranges, and event details', a
   const event = find('christmas-with-the-knights-2026');
   const url = new URL(outlookCalendarLinks(event, 'https://stgenknights.com')[0].url);
   assert.equal(url.origin, 'https://outlook.live.com');
-  assert.equal(url.searchParams.get('startdt'), '2026-12-28T00:00:00.000Z');
-  assert.equal(url.searchParams.get('enddt'), url.searchParams.get('startdt'));
+  assert.equal(url.searchParams.get('startdt'), '2026-12-26T22:00:00.000Z');
+  assert.equal(url.searchParams.get('enddt'), '2026-12-27T04:00:00.000Z');
   assert.equal(url.searchParams.get('allday'), 'false');
   assert.equal(url.searchParams.get('subject'), event.title);
   assert.equal(url.searchParams.get('location'), event.location);
