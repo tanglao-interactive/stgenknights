@@ -114,3 +114,24 @@ test('announcement actions are labelled icon-and-text controls without dropdowns
   assert.ok(existsSync('_site/img/icons/google-calendar.png'));
   assert.ok(existsSync('_site/img/icons/outlook-calendar.svg'));
 });
+
+
+test('Simbang Gabi preserves the flyer time, location, and open-ended celebration', async () => {
+  const event = announcements.find(item => item.slug === 'simbang-gabi-december-2026');
+  assert.equal(event.date, '2026-12-15');
+  assert.deepEqual(event.calendar, [{ start: '2026-12-15T17:45:00-08:00' }]);
+  assert.equal(event.location, 'Cathedral of Our Lady of the Angels, 555 W. Temple St., Los Angeles, CA 90012');
+  const ics = calendar(event.slug);
+  assert.match(ics, /DTSTART:20261216T014500Z/);
+  assert.doesNotMatch(ics, /DTEND/);
+  const page = readFileSync(`_site/announcements/${event.slug}/index.html`, 'utf8');
+  assert.ok(page.includes(event.image));
+  assert.ok(page.includes('Archbishop Jose H. Gomez'));
+  assert.ok(page.includes('divrod12@gmail.com'));
+  assert.ok(page.includes('https://www.filminadla.org/'));
+  assert.ok(readFileSync('_site/announcements/index.html', 'utf8').includes(`/announcements/${event.slug}/`));
+  assert.ok(existsSync(`_site${event.image}`));
+  const { googleCalendarLinks, outlookCalendarLinks } = await import('../lib/announcement-calendar.js');
+  assert.equal(new URL(googleCalendarLinks(event, 'https://stgenknights.com')[0].url).searchParams.get('dates'), '20261216T014500Z/20261216T014500Z');
+  assert.equal(new URL(outlookCalendarLinks(event, 'https://stgenknights.com')[0].url).searchParams.get('startdt'), '2026-12-16T01:45:00.000Z');
+});

@@ -1,5 +1,34 @@
 [
   {
+    "slug": "simbang-gabi-december-2026",
+    "calendar": [
+      {
+        "start": "2026-12-15T17:45:00-08:00"
+      }
+    ],
+    "date": "2026-12-15",
+    "dateDisplay": "December 15, 2026",
+    "title": "24th Annual Los Angeles Archdiocesan Simbang Gabi",
+    "excerpt": "Join the 24th Annual Los Angeles Archdiocesan Simbang Gabi on Tuesday, December 15, at 5:45 p.m. at the Cathedral of Our Lady of the Angels. A Procession of Parols will be followed by the Eucharistic Celebration.",
+    "description": "Come join the 24th Annual Los Angeles Archdiocesan Simbang Gabi on Tuesday, December 15, 2026, at 5:45 p.m. at the Cathedral of Our Lady of the Angels. The Procession of Parols will be followed by the Eucharistic Celebration, with Archbishop Jose H. Gomez as main celebrant. Hosted by the Filipino Ministry of the Archdiocese of Los Angeles, San Gabriel Pastoral Region.",
+    "image": "/img/announcements/simbang-gabi-december-2026.jpg",
+    "imageAlt": "Flyer for the 24th Annual Los Angeles Archdiocesan Simbang Gabi on December 15, 2026, at 5:45 p.m. at the Cathedral of Our Lady of the Angels, with Archbishop Jose H. Gomez as main celebrant",
+    "imageFit": "contain",
+    "imageCaption": "24th Annual Los Angeles Archdiocesan Simbang Gabi 2026 event flyer",
+    "schedule": [
+      "Tuesday, December 15, 2026",
+      "5:45 p.m.",
+      "Procession of Parols followed by the Eucharistic Celebration",
+      "Main celebrant: Archbishop Jose H. Gomez"
+    ],
+    "location": "Cathedral of Our Lady of the Angels, 555 W. Temple St., Los Angeles, CA 90012",
+    "contacts": [
+      "Divina Rodriguez: divrod12@gmail.com"
+    ],
+    "actionUrl": "https://www.filminadla.org/",
+    "actionLabel": "Visit the Filipino Ministry website"
+  },
+  {
     "slug": "november-birthday-celebrants-2026",
     "date": "2026-11-30",
     "dateDisplay": "November 2026",
