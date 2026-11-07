@@ -33,7 +33,7 @@ footerBackLabel: Back to all announcements
     </header>
 
     <main id="main" class="announcement-detail-main" tabindex="-1">
-        <article class="container announcement-detail">
+        <article class="container announcement-detail{% if announcement.largeFlyer %} announcement-detail-large-flyer{% endif %}">
             <div class="announcement-detail-copy">
                 <a class="announcement-back" href="/announcements/"><span aria-hidden="true">←</span> All announcements</a>
                 <time datetime="{{ announcement.date }}">{{ announcement.dateDisplay }}</time>

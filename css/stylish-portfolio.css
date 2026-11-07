@@ -1836,6 +1836,13 @@ body.lightbox-open {
 }
 
 .announcement-more,
+@media (min-width: 992px) {
+    .announcement-detail-large-flyer {
+        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+        gap: 40px;
+    }
+}
+
 .announcement-back {
     color: var(--blue);
     font-weight: 900;
