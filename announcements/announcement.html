@@ -116,6 +116,12 @@ footerBackLabel: Back to all announcements
                 </section>
                 {% if announcement.attachment %}<a class="agenda-download" href="{{ announcement.attachment }}" target="_blank" rel="noopener"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> {{ announcement.attachmentLabel }}</a>{% endif %}
                 {% endif %}
+                {% if announcement.notice %}
+                <section class="announcement-facts" aria-labelledby="announcement-notice-heading">
+                    <h2 id="announcement-notice-heading">{{ announcement.notice.heading | escape }}</h2>
+                    <p>{{ announcement.notice.text | escape }}</p>
+                </section>
+                {% endif %}
             </div>
 
             <figure class="announcement-poster">

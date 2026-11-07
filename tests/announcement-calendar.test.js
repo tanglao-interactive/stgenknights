@@ -135,3 +135,20 @@ test('Simbang Gabi preserves the flyer time, location, and open-ended celebratio
   assert.equal(new URL(googleCalendarLinks(event, 'https://stgenknights.com')[0].url).searchParams.get('dates'), '20261216T014500Z/20261216T014500Z');
   assert.equal(new URL(outlookCalendarLinks(event, 'https://stgenknights.com')[0].url).searchParams.get('startdt'), '2026-12-16T01:45:00.000Z');
 });
+
+
+test('November 15 team notice is separate from the November 21 Fourth Degree event', () => {
+  const event = announcements.find(item => item.slug === 'fourth-degree-exemplification-november-2026');
+  assert.equal(event.date, '2026-11-21');
+  assert.deepEqual(event.calendar, [{ start: '2026-11-21T09:30:00-08:00' }]);
+  assert.equal(event.location, 'St. Lucy Catholic Church, 2301 Santa Fe Avenue, Long Beach, CA 90810');
+  const page = readFileSync(`_site/announcements/${event.slug}/index.html`, 'utf8');
+  assert.ok(page.includes('<h2 id="announcement-notice-heading">November 15 Exemplification Team Notice</h2>'));
+  assert.ok(page.includes(event.notice.text));
+  assert.ok(page.includes('Saturday, November 21, 2026'));
+  assert.ok(page.includes('9:30 a.m.'));
+  assert.match(calendar(event.slug), /DTSTART:20261121T173000Z/);
+  assert.doesNotMatch(calendar(event.slug), /DTSTART:20261115/);
+  const simbang = readFileSync('_site/announcements/simbang-gabi-december-2026/index.html', 'utf8');
+  assert.ok(!simbang.includes('announcement-notice-heading'));
+});
