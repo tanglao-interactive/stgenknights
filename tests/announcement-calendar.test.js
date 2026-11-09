@@ -118,13 +118,37 @@ test('announcement actions are labelled icon-and-text controls without dropdowns
 
 test('Simbang Gabi preserves the flyer time, location, and open-ended celebration', async () => {
   const event = announcements.find(item => item.slug === 'simbang-gabi-december-2026');
+  assert.equal(event.date, '2026-12-15');
+  assert.equal(event.image, '/img/announcements/simbang-gabi-december-2026.jpg');
+  assert.deepEqual(event.calendar, [{ start: '2026-12-15T17:45:00-08:00' }]);
+  assert.equal(event.location, 'Cathedral of Our Lady of the Angels, 555 W. Temple St., Los Angeles, CA 90012');
+  const ics = calendar(event.slug);
+  assert.match(ics, /DTSTART:20261216T014500Z/);
+  assert.doesNotMatch(ics, /DTEND/);
+  const page = readFileSync(`_site/announcements/${event.slug}/index.html`, 'utf8').match(/<main\b[^>]*>[\s\S]*?<\/main>/)[0];
+  assert.ok(page.includes(event.image));
+  assert.ok(page.includes('Archbishop Jose H. Gomez'));
+  assert.ok(!page.includes('Feed the Family'));
+  assert.ok(!page.includes('December 21'));
+  assert.ok(page.includes('divrod12@gmail.com'));
+  assert.ok(page.includes('https://www.filminadla.org/'));
+  assert.ok(readFileSync('_site/announcements/index.html', 'utf8').includes(`/announcements/${event.slug}/`));
+  assert.ok(existsSync(`_site${event.image}`));
+  const { googleCalendarLinks, outlookCalendarLinks } = await import('../lib/announcement-calendar.js');
+  assert.equal(new URL(googleCalendarLinks(event, 'https://stgenknights.com')[0].url).searchParams.get('dates'), '20261216T014500Z/20261216T014500Z');
+  assert.equal(new URL(outlookCalendarLinks(event, 'https://stgenknights.com')[0].url).searchParams.get('startdt'), '2026-12-16T01:45:00.000Z');
+});
+
+test('Simbang Gabi Feed the Family retains its separate December 21 breakfast details', async () => {
+  const event = announcements.find(item => item.slug === 'simbang-gabi-feed-the-family-december-2026');
   assert.equal(event.date, '2026-12-21');
+  assert.equal(event.image, '/img/announcements/simbang-gabi-feed-the-family-december-2026.jpg');
   assert.deepEqual(event.calendar, [{ start: '2026-12-21T05:30:00-08:00' }]);
   assert.equal(event.location, 'St. Genevieve Madonna Hall, 14061 Roscoe Blvd., Panorama City, CA 91402');
   const ics = calendar(event.slug);
   assert.match(ics, /DTSTART:20261221T133000Z/);
   assert.doesNotMatch(ics, /DTEND/);
-  const page = readFileSync(`_site/announcements/${event.slug}/index.html`, 'utf8');
+  const page = readFileSync(`_site/announcements/${event.slug}/index.html`, 'utf8').match(/<main\b[^>]*>[\s\S]*?<\/main>/)[0];
   assert.ok(page.includes(event.image));
   assert.ok(page.includes('Feed the Family'));
   assert.ok(page.includes('After Simbang Gabi — 5:30 a.m.'));
@@ -138,6 +162,33 @@ test('Simbang Gabi preserves the flyer time, location, and open-ended celebratio
   const { googleCalendarLinks, outlookCalendarLinks } = await import('../lib/announcement-calendar.js');
   assert.equal(new URL(googleCalendarLinks(event, 'https://stgenknights.com')[0].url).searchParams.get('dates'), '20261221T133000Z/20261221T133000Z');
   assert.equal(new URL(outlookCalendarLinks(event, 'https://stgenknights.com')[0].url).searchParams.get('startdt'), '2026-12-21T13:30:00.000Z');
+});
+
+test('both Simbang Gabi announcements have distinct flyers, pages, and calendar downloads', () => {
+  const events = announcements.filter(item => item.slug.startsWith('simbang-gabi-'));
+  assert.equal(events.length, 2);
+  assert.equal(new Set(events.map(item => item.slug)).size, 2);
+  assert.equal(new Set(events.map(item => item.image)).size, 2);
+  const listing = readFileSync('_site/announcements/index.html', 'utf8');
+  const sitemap = readFileSync('_site/sitemap.xml', 'utf8');
+  const uids = [];
+  for (const event of events) {
+    assert.equal(event.largeFlyer, true);
+    const pagePath = `/announcements/${event.slug}/`;
+    const calendarPath = `/calendars/${event.slug}.ics`;
+    assert.ok(listing.includes(pagePath));
+    assert.ok(listing.includes(event.image));
+    assert.ok(listing.includes(calendarPath));
+    assert.ok(sitemap.includes(pagePath));
+    const page = readFileSync(`_site${pagePath}index.html`, 'utf8');
+    assert.ok(page.includes(event.image));
+    assert.ok(page.includes(calendarPath));
+    const ics = readFileSync(`_site${calendarPath}`, 'utf8').replace(/\r\n /g, '');
+    assert.ok(ics.includes(`URL:https://stgenknights.com${pagePath}`));
+    assert.ok(ics.includes(`SUMMARY:${event.title}`));
+    uids.push(ics.match(/^UID:(.+)$/m)[1]);
+  }
+  assert.equal(new Set(uids).size, 2);
 });
 
 
