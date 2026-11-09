@@ -254,3 +254,33 @@ test('November Third Degree event has a full portrait flyer, announcement, and e
   assert.notEqual(event.image, fourth.image);
   assert.deepEqual(fourth.calendar, [{ start: '2026-11-21T09:30:00-08:00' }]);
 });
+
+test('Assembly 65 Christmas potluck matches the supplied December 3 flyer', async () => {
+  const event = announcements.find(item => item.slug === 'cardinal-mcintyre-christmas-party-december-2026');
+  assert.equal(event.title, 'Cardinal McIntyre Assembly 65 Christmas Party Potluck');
+  assert.equal(event.date, '2026-12-03');
+  assert.deepEqual(event.calendar, [{ start: '2026-12-03T18:00:00-08:00', end: '2026-12-03T22:00:00-08:00' }]);
+  assert.equal(event.location, 'Knights of Columbus Hall, 14450 Valerio Street, Van Nuys, CA 91405');
+  assert.equal(event.imageFit, 'contain');
+  assert.equal(event.largeFlyer, true);
+  const ics = calendar(event.slug).replace(/\r\n /g, '');
+  assert.match(ics, /DTSTART:20261204T020000Z/);
+  assert.match(ics, /DTEND:20261204T060000Z/);
+  const pagePath = `/announcements/${event.slug}/`;
+  const page = readFileSync(`_site${pagePath}index.html`, 'utf8');
+  for (const text of [event.title, event.image, event.location, ...event.schedule, `/calendars/${event.slug}.ics`]) {
+    assert.ok(page.includes(text), text);
+  }
+  assert.ok(readFileSync('_site/announcements/index.html', 'utf8').includes(pagePath));
+  assert.ok(readFileSync('_site/sitemap.xml', 'utf8').includes(pagePath));
+  const jpeg = readFileSync(`_site${event.image}`);
+  assert.equal(jpeg.toString('hex', 0, 3), 'ffd8ff');
+  assert.equal(jpeg.length, 99825);
+  const { googleCalendarLinks, outlookCalendarLinks } = await import('../lib/announcement-calendar.js');
+  const google = new URL(googleCalendarLinks(event, 'https://stgenknights.com')[0].url);
+  assert.equal(google.searchParams.get('dates'), '20261204T020000Z/20261204T060000Z');
+  const outlook = new URL(outlookCalendarLinks(event, 'https://stgenknights.com')[0].url);
+  assert.equal(outlook.searchParams.get('startdt'), '2026-12-04T02:00:00.000Z');
+  assert.equal(outlook.searchParams.get('enddt'), '2026-12-04T06:00:00.000Z');
+  assert.notEqual(event.image, announcements.find(item => item.slug === 'christmas-with-the-knights-2026').image);
+});
