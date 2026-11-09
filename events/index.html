@@ -33,6 +33,24 @@ footerBackLabel: Back to events
 
     <main id="main" class="events-main" tabindex="-1">
         <div class="container">
+            {% assign exemplification = announcements | where: "slug", "third-degree-exemplification-november-2026" | first %}
+            <section aria-labelledby="featured-event-heading">
+                <div class="events-intro">
+                    <p class="eyebrow">Council Event</p>
+                    <h2 id="featured-event-heading">Third Degree Exemplification</h2>
+                </div>
+                <article class="event-card" id="third-degree-exemplification-november-2026">
+                    <div class="event-date"><strong>Nov 15</strong><span>Sunday, 2026</span></div>
+                    <div>
+                        <h3><a href="/announcements/{{ exemplification.slug }}/">{{ exemplification.title }}</a></h3>
+                        <p class="event-time"><i class="fa fa-clock-o" aria-hidden="true"></i> <time datetime="2026-11-15T15:30:00-08:00">3:30 p.m. Pacific Time</time></p>
+                        <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{ exemplification.location }}</p>
+                        <p>Before the council’s Business Meeting.</p>
+                        <p><a class="button primary" href="/announcements/{{ exemplification.slug }}/">View event and flyer</a></p>
+                    </div>
+                </article>
+            </section>
+
             <div class="events-intro">
                 <p class="eyebrow">Monthly Schedule</p>
                 <h2>Join us throughout the month.</h2>

@@ -1,5 +1,28 @@
 [
   {
+    "slug": "third-degree-exemplification-november-2026",
+    "calendar": [
+      {
+        "start": "2026-11-15T15:30:00-08:00"
+      }
+    ],
+    "date": "2026-11-15",
+    "dateDisplay": "November 15, 2026",
+    "title": "Third Degree Exemplification",
+    "excerpt": "Join St. Genevieve Council 14772 for the Third Degree Exemplification on Sunday, November 15, at 3:30 p.m. in Madonna Hall, before the Business Meeting.",
+    "description": "Knights of Columbus St. Genevieve Council 14772 will hold the Exemplification of Charity, Unity and Fraternity on Sunday, November 15, 2026, at 3:30 p.m. in Madonna Hall. Join us in welcoming the Knights advancing through the Third Degree. The exemplification takes place before the council’s Business Meeting.",
+    "image": "/img/announcements/third-degree-exemplification-november-2026.png",
+    "imageAlt": "Navy and gold flyer for St. Genevieve Council 14772 Third Degree Exemplification on Sunday, November 15, 2026, at 3:30 p.m. Pacific in Madonna Hall at St. Genevieve Catholic Church, Panorama City",
+    "largeFlyer": true,
+    "imageCaption": "Third Degree Exemplification: Charity, Unity and Fraternity. November 15, 2026, at 3:30 p.m.",
+    "schedule": [
+      "Sunday, November 15, 2026",
+      "3:30 p.m. Pacific Time",
+      "Before the council’s Business Meeting"
+    ],
+    "location": "Madonna Hall, St. Genevieve Catholic Church, 14061 Roscoe Blvd., Panorama City, CA 91402"
+  },
+  {
     "slug": "simbang-gabi-december-2026",
     "calendar": [
       {

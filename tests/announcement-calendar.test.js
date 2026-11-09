@@ -207,3 +207,50 @@ test('November 15 team notice is separate from the November 21 Fourth Degree eve
   const simbang = readFileSync('_site/announcements/simbang-gabi-december-2026/index.html', 'utf8');
   assert.ok(!simbang.includes('announcement-notice-heading'));
 });
+
+test('November Third Degree event uses 3:30 p.m. Pacific with no invented end time', async () => {
+  const event = announcements.find(item => item.slug === 'third-degree-exemplification-november-2026');
+  assert.equal(event.date, '2026-11-15');
+  assert.deepEqual(event.calendar, [{ start: '2026-11-15T15:30:00-08:00' }]);
+  assert.equal(event.title, 'Third Degree Exemplification');
+  assert.equal(event.location, 'Madonna Hall, St. Genevieve Catholic Church, 14061 Roscoe Blvd., Panorama City, CA 91402');
+  assert.equal(event.largeFlyer, true);
+  const ics = calendar(event.slug).replace(/\r\n /g, '');
+  assert.match(ics, /DTSTART:20261115T233000Z/);
+  assert.doesNotMatch(ics, /DTEND/);
+  assert.ok(ics.includes(`URL:https://stgenknights.com/announcements/${event.slug}/`));
+  const { googleCalendarLinks, outlookCalendarLinks } = await import('../lib/announcement-calendar.js');
+  const google = new URL(googleCalendarLinks(event, 'https://stgenknights.com')[0].url);
+  assert.equal(google.searchParams.get('dates'), '20261115T233000Z/20261115T233000Z');
+  assert.equal(google.searchParams.get('ctz'), 'America/Los_Angeles');
+  assert.equal(new URL(outlookCalendarLinks(event, 'https://stgenknights.com')[0].url).searchParams.get('startdt'), '2026-11-15T23:30:00.000Z');
+});
+
+test('November Third Degree event has a full portrait flyer, announcement, and event listing', () => {
+  const event = announcements.find(item => item.slug === 'third-degree-exemplification-november-2026');
+  const pagePath = `/announcements/${event.slug}/`;
+  const page = readFileSync(`_site${pagePath}index.html`, 'utf8');
+  for (const text of ['November 15, 2026', '3:30 p.m. Pacific Time', event.location, event.image, `/calendars/${event.slug}.ics`]) {
+    assert.ok(page.includes(text));
+  }
+  assert.ok(readFileSync('_site/announcements/index.html', 'utf8').includes(pagePath));
+  assert.ok(readFileSync('_site/sitemap.xml', 'utf8').includes(pagePath));
+  const events = readFileSync('_site/events/index.html', 'utf8');
+  assert.ok(events.includes(`id="${event.slug}"`));
+  assert.ok(events.includes(`href="${pagePath}"`));
+  assert.ok(events.includes('datetime="2026-11-15T15:30:00-08:00"'));
+  assert.ok(events.includes(event.location));
+  const png = readFileSync(`_site${event.image}`);
+  assert.equal(png.toString('hex', 0, 8), '89504e470d0a1a0a');
+  assert.equal(png.readUInt32BE(16), 1200);
+  assert.equal(png.readUInt32BE(20), 1600);
+  const svg = readFileSync(`img/announcements/${event.slug}.svg`, 'utf8');
+  assert.ok(svg.includes('NOVEMBER 15, 2026'));
+  assert.ok(svg.includes('3:30 PM'));
+  assert.ok(svg.includes('Madonna Hall'));
+  assert.ok(!svg.includes('Cor Mariae'));
+  assert.ok(!svg.includes('St. Lucy'));
+  const fourth = announcements.find(item => item.slug === 'fourth-degree-exemplification-november-2026');
+  assert.notEqual(event.image, fourth.image);
+  assert.deepEqual(fourth.calendar, [{ start: '2026-11-21T09:30:00-08:00' }]);
+});
