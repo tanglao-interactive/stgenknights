@@ -1,5 +1,59 @@
 [
   {
+    "slug": "christ-the-king-november-2026",
+    "title": "Christ the King at St. Genevieve",
+    "date": "11.22.2026",
+    "isoDate": "2026-11-22",
+    "dateLabel": "November 22, 2026",
+    "description": "Moments of Eucharistic worship at St. Genevieve, honoring Christ the King with prayer, reverence, and a beautiful floral tribute.",
+    "article": [
+      "At St. Genevieve, the celebration of Christ the King brought the focus of parish life to Jesus and His presence in the Eucharist. These photographs from November 22, 2026 preserve moments of prayer and reverence in the sanctuary, where the Blessed Sacrament was displayed in a golden monstrance upon the altar.",
+      "Beside the altar, a crowned image of Christ stood surrounded by white and yellow flowers, gold fabric, and lighted candles. The image of His Sacred Heart offered a quiet reminder of the love at the heart of His kingship: a love that calls us to draw near to Him and care for one another.",
+      "The photographs show the priest and altar servers turned toward the Blessed Sacrament, followed by moments with the monstrance held aloft beside the image of Christ the King. Together with the accompanying video clips, they preserve a glimpse of the parish’s worship and the care given to this celebration.",
+      "For the St. Genevieve Knights of Columbus community, these moments invite renewed commitment to faith expressed through charity, unity, and service. May Christ reign in our hearts, guide our families, and strengthen our parish in love. Christ the King, reign in our hearts!"
+    ],
+    "cover": "/img/gallery/2026-11-22-christ-the-king/01-christ-the-king.jpg",
+    "photos": [
+      {
+        "src": "/img/gallery/2026-11-22-christ-the-king/01-christ-the-king.jpg",
+        "alt": "An image of Christ the King surrounded by white and yellow flowers and two lighted candles at St. Genevieve.",
+        "caption": "An image of Christ the King surrounded by white and yellow flowers and two lighted candles at St. Genevieve."
+      },
+      {
+        "src": "/img/gallery/2026-11-22-christ-the-king/02-adoration.jpg",
+        "alt": "A priest and altar servers face the Blessed Sacrament displayed in a monstrance on the altar.",
+        "caption": "A priest and altar servers face the Blessed Sacrament displayed in a monstrance on the altar."
+      },
+      {
+        "src": "/img/gallery/2026-11-22-christ-the-king/03-benediction.jpg",
+        "alt": "A priest holds the monstrance beside the image of Christ the King during Eucharistic worship.",
+        "caption": "A priest holds the monstrance beside the image of Christ the King during Eucharistic worship."
+      },
+      {
+        "src": "/img/gallery/2026-11-22-christ-the-king/04-eucharistic-blessing.jpg",
+        "alt": "The Blessed Sacrament is held aloft beside the flower-adorned image of Christ the King.",
+        "caption": "The Blessed Sacrament is held aloft beside the flower-adorned image of Christ the King."
+      }
+    ],
+    "videos": [
+      {
+        "src": "/img/gallery/2026-11-22-christ-the-king/celebration-1.mp4",
+        "poster": "/img/gallery/2026-11-22-christ-the-king/celebration-1-poster.jpg",
+        "title": "Christ the King at St. Genevieve — clip 1"
+      },
+      {
+        "src": "/img/gallery/2026-11-22-christ-the-king/celebration-2.mp4",
+        "poster": "/img/gallery/2026-11-22-christ-the-king/celebration-2-poster.jpg",
+        "title": "Christ the King at St. Genevieve — clip 2"
+      },
+      {
+        "src": "/img/gallery/2026-11-22-christ-the-king/celebration-3.mp4",
+        "poster": "/img/gallery/2026-11-22-christ-the-king/celebration-3-poster.jpg",
+        "title": "Christ the King at St. Genevieve — clip 3"
+      }
+    ]
+  },
+  {
     "slug": "fourth-degree-exemplification-november-2026",
     "title": "Fourth Degree Exemplification",
     "date": "11.21.2026",
