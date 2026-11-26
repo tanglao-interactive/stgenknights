@@ -35,9 +35,34 @@ footerBackLabel: Back to top
     <header id="top" class="site-hero">
         {% include "site-nav.html" %}
 
-        <a class="hero-artwork" href="/knightline/installation-of-officers-2026/" aria-label="Read the Knightline story about the installation of officers and directors">
+        <a id="regular-homepage-hero" class="hero-artwork" href="/knightline/installation-of-officers-2026/" aria-label="Read the Knightline story about the installation of officers and directors">
             <img src="/img/officers-2026-2027-themed-hero.webp" alt="Knights of Columbus St. Genevieve Council 14772. Newly Installed Officers, Directors and Members, Columbian Year 2026–2027. Brotherhood, Serving with Purpose.">
         </a>
+
+        <template id="thanksgiving-homepage-hero" data-expires-at="2026-11-27T00:00:00-08:00">
+            <div class="hero-artwork">
+                <img src="/img/thanksgiving-2026-greeting.webp" width="1290" height="1155" style="display:block;max-width:800px;margin-inline:auto" alt="Happy Thanksgiving from St. Genevieve Knights of Columbus Council 14772 to all Brother Knights, families, and friends. May God bless you and your loved ones with good health, peace, and joy.">
+            </div>
+        </template>
+        <script>
+            (() => {
+                const greeting = document.getElementById("thanksgiving-homepage-hero");
+                const expiresAt = Date.parse(greeting.dataset.expiresAt);
+                const remaining = expiresAt - Date.now();
+                if (!Number.isFinite(remaining) || remaining <= 0) return;
+
+                const regularHero = document.getElementById("regular-homepage-hero");
+                const holidayHero = greeting.content.firstElementChild.cloneNode(true);
+                regularHero.replaceWith(holidayHero);
+
+                const restoreIfExpired = () => {
+                    if (Date.now() >= expiresAt) holidayHero.replaceWith(regularHero);
+                };
+                window.setTimeout(restoreIfExpired, remaining);
+                window.addEventListener("pageshow", restoreIfExpired);
+                document.addEventListener("visibilitychange", restoreIfExpired);
+            })();
+        </script>
     </header>
 
     <main id="main" tabindex="-1">
