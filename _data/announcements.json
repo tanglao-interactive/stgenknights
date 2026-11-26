@@ -81,6 +81,25 @@
     "actionLabel": "Visit the Filipino Ministry website"
   },
   {
+    "slug": "st-genevieve-simbang-gabi-december-2026",
+    "date": "2026-12-24",
+    "dateDisplay": "December 16–24, 2026",
+    "title": "Simbang Gabi 2026 at St. Genevieve Church",
+    "excerpt": "Join St. Genevieve Church for Simbang Gabi, December 16–24. Dawn Mass is at 5:30 a.m., except Sunday, December 20, when Mass is at 5:00 a.m.",
+    "description": "Join St. Genevieve Church in Panorama City for nine days of Simbang Gabi from Wednesday, December 16, through Thursday, December 24, 2026. Mass begins at 5:30 a.m. each day except Sunday, December 20, when it begins at 5:00 a.m. See the parish flyer for the daily celebrants.",
+    "image": "/img/announcements/st-genevieve-simbang-gabi-december-2026.jpg",
+    "imageAlt": "St. Genevieve Church Simbang Gabi flyer featuring the Nativity and nine Masses, December 16–24, 2026. Dawn Mass at 5:30 a.m. except Sunday, December 20, at 5:00 a.m.",
+    "imageFit": "contain",
+    "largeFlyer": true,
+    "imageCaption": "St. Genevieve Church Simbang Gabi 2026 parish flyer",
+    "schedule": [
+      "December 16–24, 2026",
+      "Dawn Mass: 5:30 a.m. Pacific, except Sunday",
+      "Sunday, December 20: 5:00 a.m. Pacific"
+    ],
+    "location": "St. Genevieve Catholic Church, 14061 Roscoe Blvd., Panorama City, CA 91402"
+  },
+  {
     "slug": "simbang-gabi-feed-the-family-december-2026",
     "calendar": [
       {
